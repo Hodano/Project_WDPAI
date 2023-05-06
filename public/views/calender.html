@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/style-calender.css">
     <script src="https://kit.fontawesome.com/d10620c300.js" crossorigin="anonymous"></script>
-    <script src="../Js/scrypt.js"></script>
+    <script src="../Js/scrypt-calendar.js"></script>
     <title> Calander Page </title>
 </head>
 <body>
@@ -14,7 +14,7 @@
                 <div class="nav-title" id="navTitle">
                     <p class = "menu-icons-style"><i class="fa-solid fa-bars"></i></p>
                 </div>
-                <ul id="navUl">
+                <ul id="navUl" class="nav-ul-hidden">
                     <li>
                         <i class="fa-solid fa-user"></i>
                         <a href="clients.html" class="client-menu">Client</a>
@@ -52,7 +52,88 @@
                     </div>
                 </header>
                 <section class="client-section">
-                    <p>calender</p>
+                    <div class ="add-term">
+                        <div class="nav-term" id="navTerm"><h1>Add a term</h1></div>
+                            <div class = "form-term-hidden" class = "form-term" id ="formTerm">
+	                            <form class = form-class id = "navForm" method="POST" action="/dodaj_usluge" >
+		                            <div class = "first-form">
+                                        <label>Data of event:</label>
+                                        <input type="date" name="data-event">
+                                    </div>
+		                            <div class = "second-form">
+                                        <label>Description event:</label>
+		                                <input type="text" name="event">
+                                        <button class="second-button-form" type="submit">Add</button>
+		                                
+                                    </div>
+
+		                
+		                            
+	                            </form>
+                            </div>
+                    </div>
+                    <div class = "display-term">
+                        <div class="terms" id = "term1">
+                            <div class = "each-term">
+                                <h1>Your Data:</h1>
+                                <p>20.12.2014</p>
+                            </div>
+                            <div class="each-price" >
+                                <h1>Event:</h1>
+                                <p>You have to do evrything</p>
+                            </div>
+                        </div>
+                        <div class="terms" id = "term1">
+                            <div class = "each-term">
+                                <h1>Your Data:</h1>
+                                <p>20.12.2014</p>
+                            </div>
+                            <div class="each-price" >
+                                <h1>Event:</h1>
+                                <p>You have to do evrything</p>
+                            </div>
+                        </div>
+                        <div class="terms" id = "term1">
+                            <div class = "each-term">
+                                <h1>Your Data:</h1>
+                                <p>20.12.2014</p>
+                            </div>
+                            <div class="each-price" >
+                                <h1>Event:</h1>
+                                <p>You have to do evrything</p>
+                            </div>
+                        </div>
+                        <div class="terms" id = "term1">
+                            <div class = "each-term">
+                                <h1>Your Data:</h1>
+                                <p>20.12.2014</p>
+                            </div>
+                            <div class="each-price" >
+                                <h1>Event:</h1>
+                                <p>You have to do evrything</p>
+                            </div>
+                        </div>
+                        <div class="terms" id = "term1">
+                            <div class = "each-term">
+                                <h1>Your Data:</h1>
+                                <p>20.12.2014</p>
+                            </div>
+                            <div class="each-price" >
+                                <h1>Event:</h1>
+                                <p>You have to do evrything dasdasdas a dasd as das da</p>
+                            </div>
+                        </div>
+                        <div class="terms" id = "term1">
+                            <div class = "each-term">
+                                <h1>Your Data:</h1>
+                                <p>20.12.2014</p>
+                            </div>
+                            <div class="each-price" >
+                                <h1>Event:</h1>
+                                <p>You have to do evrything</p>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </main>
         </div>
