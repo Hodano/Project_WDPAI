@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/style-price-list.css">
+
     <script src="https://kit.fontawesome.com/d10620c300.js" crossorigin="anonymous"></script>
     <script src="../Js/scrypt.js"></script>
     <title> Price-list Page </title>
@@ -10,11 +11,11 @@
     <div class="all-container">
         <div class="client-container">
             <nav>
-            
+                 <!-- <a class="menu-small-window" href = "#">MENU      ^ </a> -->
                 <div class="nav-title" id="navTitle">
                     <p class = "menu-icons-style"><i class="fa-solid fa-bars"></i></p>
                 </div>
-                <ul id="navUl">
+                <ul id="navUl" class="nav-ul-hidden">
                     <li>
                         <i class="fa-solid fa-user"></i>
                         <a href="clients.html" class="client-menu">Client</a>
@@ -52,7 +53,106 @@
                     </div>
                 </header>
                 <section class="client-section">
-                    <p>price-list</p>
+                    <div class ="add-service">
+                        <div class="nav-service" id="navService"><h1>Add a service</h1></div>
+                            <div class = "form-service-hidden" class = "form-serivce" id ="formService">
+	                            <form class = form-class id = "navForm" method="POST" action="/dodaj_usluge" >
+		                            <div class = "first-form">
+                                        <label>Name of service:</label>
+                                        <input type="text" name="nazwa_uslugi">
+                                    </div>
+		                            <div class = "second-form">
+                                        <label>Price:</label>
+		                                <input type="number" name="cena">
+                                        <button class="second-button-form" type="submit">Add</button>
+		                                
+                                    </div>
+
+		                
+		                            
+	                            </form>
+                            </div>
+                    </div>
+                    <div class = "display-service">
+                        <div class="services" id = "service1">
+                            <div class="each-img">
+                                <img class="price-img"  src="../img/Price-list/wrench.svg">
+                            </div>
+                            <div class = "each-service">
+                                <h1>Service:</h1>
+                                <p>Wymiana kół</p>
+                            </div>
+                            <div class="each-price" >
+                                <h1>Price:</h1>
+                                <p>300</p>
+                            </div>
+                        </div>
+                        <div class="services" id = "service1">
+                            <div class="each-img">
+                                <img class="price-img"  src="../img/Price-list/wrench.svg">
+                            </div>
+                            <div class = "each-service">
+                                <h1>Service:</h1>
+                                <p>Wymiana kół</p>
+                            </div>
+                            <div class="each-price" >
+                                <h1>Price:</h1>
+                                <p>300</p>
+                            </div>
+                        </div>
+                        <div class="services" id = "service1">
+                            <div class="each-img">
+                                <img class="price-img"  src="../img/Price-list/wrench.svg">
+                            </div>
+                            <div class = "each-service">
+                                <h1>Service:</h1>
+                                <p>Wymiana kół</p>
+                            </div>
+                            <div class="each-price" >
+                                <h1>Price:</h1>
+                                <p>300</p>
+                            </div>
+                        </div>
+                        <div class="services" id = "service1">
+                            <div class="each-img">
+                                <img class="price-img"  src="../img/Price-list/wrench.svg">
+                            </div>
+                            <div class = "each-service">
+                                <h1>Service:</h1>
+                                <p>Wymiana kół</p>
+                            </div>
+                            <div class="each-price" >
+                                <h1>Price:</h1>
+                                <p>300</p>
+                            </div>
+                        </div>
+                        <div class="services" id = "service1">
+                            <div class="each-img">
+                                <img class="price-img"  src="../img/Price-list/wrench.svg">
+                            </div>
+                            <div class = "each-service">
+                                <h1>Service:</h1>
+                                <p>Wymiana kół</p>
+                            </div>
+                            <div class="each-price" >
+                                <h1>Price:</h1>
+                                <p>300</p>
+                            </div>
+                        </div>
+                        <div class="services" id = "service1">
+                            <div class="each-img">
+                                <img class="price-img"  src="../img/Price-list/wrench.svg">
+                            </div>
+                            <div class = "each-service">
+                                <h1>Service:</h1>
+                                <p>Wymiana kół</p>
+                            </div>
+                            <div class="each-price" >
+                                <h1>Price:</h1>
+                                <p>300</p>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </main>
         </div>
