@@ -7,7 +7,7 @@ body{
     height: 100vh;
 }
 
-.add-client{
+.add-car{
     width: 100%;
     height: 100%;
     display: flex;
@@ -15,7 +15,7 @@ body{
     align-items: center;
 
 }
-.add-client-nav{
+.add-car-nav{
     background-color: white;
     border: 3px solid #775B5B;
     border-radius: 10px;
@@ -31,7 +31,7 @@ body{
     margin-top: 2%;
 }
 
-.add-client-nav button{
+.add-car-nav button{
     width: 100%;
     height: 100%;
     color: #775B5B;

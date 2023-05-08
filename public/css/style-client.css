@@ -2,7 +2,7 @@ body {
     margin: 0;
 }
 *{
-    font-size: 23px;
+    font-size: 18px;
 }
 
 
@@ -36,14 +36,14 @@ body {
 .main{
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 80%;
     height: 100%;
 
 }
 
 nav{
     height: 100%;
-    width: 30%;
+    width: 20%;
     background: #ECE8E8 0% 0% no-repeat padding-box;
 }
 
@@ -59,7 +59,7 @@ a{
 }
 
 nav li i{
-    font-size:1.2em ;
+    font-size:0.8em ;
     
 }
 
@@ -117,6 +117,11 @@ nav li{
     
     
 }
+.client-section{
+    height: 85%;
+    margin-top: 5%;
+    overflow: auto;
+}
 .add-client{
     display:flex;
     justify-content: center;
@@ -138,9 +143,19 @@ nav li{
     border-radius: 10px;
     opacity: 1;
 }
+
 .add-client:hover{
-    background: #775B5B 0% 0% no-repeat padding-box;
-    color: white;
+    background: white
+}
+
+
+.add-client a{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    color: #775B5B;
+    width: 100%;
+    height: 100%;
 }
 .search-client{
     width: 70%;
@@ -178,12 +193,7 @@ form.form-class1{
     height: 35%;
 }
 
-.table-class{
-    border: 1px solid #000000;
-    font-size: 10px;
-    margin-left: 3%;
-    
-}
+
 /* Środek */
 
  section{
@@ -195,6 +205,7 @@ form.form-class1{
 }
 .client-section{
     height: 85%;
+    
 
 }
 .clientss{
@@ -218,6 +229,7 @@ form.form-class1{
     height: 20%;
     
 }
+
 .data-class-grid{
     padding-bottom: 2%;
 }
@@ -245,7 +257,7 @@ h4 a {
     border-radius: 30%;
 }
 
-.data-class-grid p{
+ p{
      font-size: 70%; 
     font-family: 'Roboto', sans-serif;
     color: #808083;
@@ -259,19 +271,19 @@ h4 a {
     height: 100%;
 }  */
 
- @media only screen and (min-device-width:768px) and (max-device-width: 1023px) {
+@media only screen and (min-device-width:768px) and (max-device-width: 1023px) {
     *{
-        font-size: 25px;
+        font-size: 23px;
     }
     nav{
-        width: 45%;
+        width: 40%;
     }
     nav li{
         height: 10%;
         margin-bottom: 2em;
     }
     nav li i{
-        /* font-size:2em ; */
+        font-size:1.5em ;
         
     }
 
@@ -282,13 +294,17 @@ h4 a {
         margin: 2%;
     }
 
+
+    section{
+        
+        grid-template-columns: repeat(2, 1fr);
   }
-  
+}
 
 
 @media only screen and (max-device-width: 767px){
     * {
-        font-size: 40px;
+        font-size: 46px;
     }
     
     .all-container{
@@ -325,7 +341,6 @@ h4 a {
         box-sizing: border-box;
         border-bottom: 1px solid #000000;
         
-        
     }
 
     ul{
@@ -349,7 +364,11 @@ h4 a {
         width: 100%;
         height: 20%;
     }
+    .client-section{
+        height: 80%;
 
+        margin: 0;
+    }
     .search-client{
         order: 1;
         width: 100%;
@@ -385,26 +404,34 @@ h4 a {
         border-top: 1px solid #090000;
         border-bottom: 1px solid #000000;
     }
+    .client-section{
+        margin-top: 5%;
+    }
    
     
 
     .footer{
         height: 15%;
-        z-index: 1;
     }
     .facebook{
         display: flex;
         justify-content: center;
         align-items: center;
     }
-
-    section{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 2em;
-        padding: 0.5em;
-        overflow: auto;
+    .services{
+        padding: 3%;
+    }
+    .display-service{
+        margin: 0.5%;
     }
 
+    .each-term h1{
+        margin-bottom: 8%;
+    }
+
+    section{
+        
+        grid-template-columns: repeat(1, 1fr);
+  }
       
 }
