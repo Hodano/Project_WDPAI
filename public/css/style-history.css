@@ -486,7 +486,7 @@ div h1{
     
 
     .footer{
-        z-index: 1;
+        /* z-index: 1; */
         height: 15%;
     }
     .facebook{
@@ -497,6 +497,9 @@ div h1{
 
     .cars h1{
         padding-right: 3%;
+    }
+    .nav-car{
+        margin-bottom: 5%;
     }
       
 }

@@ -1,0 +1,23 @@
+<?php
+require_once 'src/controllers/DefoultController.php';
+class Routing{
+    public static $routes;
+
+    public static function get($url, $controller){
+        self::$routes[$url] = $controller;
+    }
+
+    public static function run($url){
+        $action = explode("/", $url)[0];
+
+        if(!array_key_exists($action, self::$routes)){
+            die("I think, this url is bad");
+        }
+        $controller = self::$routes[$action];
+        $object = new $controller;
+
+        $object->$action();
+    }
+}
+
+?>
