@@ -3,31 +3,31 @@
 require_once 'AppController.php';
 class DefoultController extends AppController{
     public function index() {
-        die("index method");
+        $this->render('login');
     }
 
     public function clients() {
-        die("index clients");
+        $this->render('clients');
     }
 
     public function history() {
-        die("index history");
+        $this->render('history');
     }
 
     public function calander() {
-        die("index calander");
+        $this->render('calander');
     }
 
     public function price_list() {
-        die("index price_list");
+        $this->render('price-list');
     }
 
     public function add_client() {
-        die("index add_client");
+        $this->render('add_client');
     }
     
     public function add_car(){
-        die("index add_car");
+        $this->render('add_car');
     }
     
     
