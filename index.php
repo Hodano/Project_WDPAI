@@ -4,13 +4,16 @@ require 'Routing.php';
 $path = trim($_SERVER['REQUEST_URI'], '/');
 $path = parse_url($path, PHP_URL_PATH);
 
-Routing::get('index', "DefoultController");
-Routing::get('clients', "DefoultController");
-Routing::get('history', "DefoultController");
-Routing::get('calander', "DefoultController");
-Routing::get('price_list', "DefoultController");
-Routing::get('add_client', "DefoultController");
-Routing::get('add_car', "DefoultController");
+Routing::get('', "DefaultController");
+Routing::get('clients', "DefaultController");
+Routing::get('history', "DefaultController");
+Routing::get('calander', "DefaultController");
+Routing::get('price_list', "DefaultController");
+Routing::get('add_client', "DefaultController");
+Routing::get('add_car', "DefaultController");
+
+Routing::post('login', "SecurityController");
+
 
 Routing::run($path);
 

@@ -8,7 +8,15 @@
     <div class="container">
         <div class= " login-all">
             <div class="login-field-container">
-            <form class="form-class-with-field">
+            <form id="logInForm" class="form-class-with-field" action="login" method="POST">
+                <div class="messages">
+                    <?php if(isset($messages)){
+                        foreach ($messages as $message) {
+                            echo $message;
+                        }
+                    }
+                    ?>
+                </div>
                     <input class= "field-email" name="email" type="tex" placeholder="email@email.com">
                     <input class="field-password"  name="password" type="password" placeholder="password">
     
@@ -16,7 +24,7 @@
             </div>
             <div class = "button-login-container">
                 
-                    <button class="button-log-in" type="submit">Log in</button>
+                    <button class="button-log-in" type="submit" form="logInForm">Log in</button>
                     <button class="button-sign-up" type="button">Sign Up</button>  
                 
                 </div>

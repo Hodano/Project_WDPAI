@@ -40,7 +40,7 @@
                     </form>
             </div>
             <div class="come-back-client-button">
-                <a href="clients.html" class="client-menu">Client</a>
+                <a href="clients.php" class="client-menu">Client</a>
             </div>
         </div>
     </div>

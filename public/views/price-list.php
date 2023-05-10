@@ -18,7 +18,7 @@
                 <ul id="navUl" class="nav-ul-hidden">
                     <li>
                         <i class="fa-solid fa-user"></i>
-                        <a href="clients.html" class="client-menu">Client</a>
+                        <a href="clients.php" class="client-menu">Client</a>
                     </li>
                     <li>
                         <i class="fa-solid fa-calendar-days"></i>
@@ -26,7 +26,7 @@
                     </li>
                     <li>
                         <i class="fa-solid fa-clock-rotate-left"></i>
-                        <a href="history.html" class="client-menu">History</a>
+                        <a href="history.php" class="client-menu">History</a>
                     </li>
                     <li>
                         <i class="fa-solid fa-sack-dollar"></i>
@@ -34,7 +34,7 @@
                     </li>
                     <li>
                         <i class="fa-solid fa-gear"></i>
-                        <a href="login.html" class="client-menu">Log out</a>
+                        <a href="login.php" class="client-menu">Log out</a>
                     </li>
                 </ul>
 
@@ -43,7 +43,7 @@
             <main class="main">
                 <header class = "header">
                     <div class="add-client">
-                        <a href="add_client.html">
+                        <a href="add_client.php">
                             <i class="fa-solid fa-plus"></i>
                             add client</a>
                     </div>

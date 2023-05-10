@@ -25,15 +25,15 @@
                     </li>
                     <li>
                         <i class="fa-solid fa-clock-rotate-left"></i>
-                        <a href="history.html" class="client-menu">History</a>
+                        <a href="history.php" class="client-menu">History</a>
                     </li>
                     <li>
                         <i class="fa-solid fa-sack-dollar"></i>
-                        <a href="price-list.html" class="client-menu">Price list</a>
+                        <a href="price-list.php" class="client-menu">Price list</a>
                     </li>
                     <li>
                         <i class="fa-solid fa-gear"></i>
-                        <a href="login.html" class="client-menu">Log out</a>
+                        <a href="login.php" class="client-menu">Log out</a>
                     </li>
                 </ul>
 
@@ -42,7 +42,7 @@
             <main class="main">
                 <header class = "header">
                     <div class="add-client">
-                         <a href="add_client.html">
+                         <a href="add_client.php">
                             <i class="fa-solid fa-plus"></i>
                             add client</a>
                     </div>
@@ -57,7 +57,7 @@
                         <div>
                             <h2>Name</h2>
                             <p>Mariusz Hodana</p>
-                        <img class="image-client" src=public/img/clients/client.svg">
+                        <img class="image-client" src="public/img/clients/client.svg">
                         </div>
                         <div class = "elo">
                             <div class = "data-class-grid">
@@ -70,7 +70,7 @@
                                 <h4>Cars</h4>
                                 <p>Seat Leon</p>
                                 <h4>
-                                    <a href="add_car.html"> add car</a>
+                                    <a href="add_car.php"> add car</a>
                                     
                                 </h4>
                             </div>
@@ -93,7 +93,7 @@
                                 <h4>Cars</h4>
                                 <p>Seat Leon</p>
                                 <h4>
-                                    <a href="add_car.html"> add car</a>
+                                    <a href="add_car.php"> add car</a>
                                     
                                 </h4>
                                 
@@ -117,7 +117,7 @@
                                 <h4>Cars</h4>
                                 <p>Seat Leon</p>
                                 <h4>
-                                    <a href="add_car.html"> add car</a>
+                                    <a href="add_car.php"> add car</a>
                                     
                                 </h4>
                             </div>
@@ -140,7 +140,7 @@
                                 <h4>Cars</h4>
                                 <p>Seat Leon</p>
                                 <h4>
-                                    <a href="add_car.html"> add car</a>
+                                    <a href="add_car.php"> add car</a>
                                     
                                 </h4>
                             </div>
@@ -163,7 +163,7 @@
                                 <h4>Cars</h4>
                                 <p>Seat Leon</p>
                                 <h4>
-                                    <a href="add_car.html"> add car</a>
+                                    <a href="add_car.php"> add car</a>
                                     
                                 </h4>
                             </div>
@@ -186,7 +186,7 @@
                                 <h4>Cars</h4>
                                 <p>Seat Leon</p>
                                 <h4>
-                                    <a href="add_car.html"> add car</a>
+                                    <a href="add_car.php"> add car</a>
                                     
                                 </h4>
                             </div>

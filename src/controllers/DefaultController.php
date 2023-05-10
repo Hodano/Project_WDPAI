@@ -1,7 +1,7 @@
 <?php
 
 require_once 'AppController.php';
-class DefoultController extends AppController{
+class DefaultController extends AppController{
     public function index() {
         $this->render('login');
     }
