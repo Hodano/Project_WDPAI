@@ -42,7 +42,7 @@
             <main class="main">
                 <header class = "header">
                     <div class="add-client">
-                        <a href="add_client.php">
+                        <a href="addClient.php">
                             <i class="fa-solid fa-plus"></i>
                             add client</a>
                     </div>
@@ -56,15 +56,15 @@
                     <div class ="add-term">
                         <div class="nav-term" id="navTerm"><h1>Add a term</h1></div>
                             <div class = "form-term-hidden" class = "form-term" id ="formTerm">
-	                            <form class = form-class id = "navForm" method="POST" action="/dodaj_usluge" >
+	                            <form class = form-class id = "navForm" method="POST" action="calendar" >
 		                            <div class = "first-form">
                                         <label>Data of event:</label>
-                                        <input type="date" name="data-event">
+                                        <input type="date" name="dateOfEvent" placeholder="date of event">
                                     </div>
 		                            <div class = "second-form">
                                         <label>Description event:</label>
-		                                <input type="text" name="event">
-                                        <button class="second-button-form" type="submit">add</button>
+		                                <input type="text" name="event" placeholder="name">
+                                        <button class="second-button-form" form="navForm" type="submit">add</button>
 		                                
                                     </div>
 
@@ -77,11 +77,11 @@
                         <div class="terms" id = "term1">
                             <div class = "each-term">
                                 <h1>Your Data:</h1>
-                                <p>20.12.2014</p>
+                                <p><?=$calendar ->getDateOfEvent() ?></p>
                             </div>
                             <div class="each-price" >
                                 <h1>Event:</h1>
-                                <p>You have to do evrything</p>
+                                <p><?=$calendar ->getEvent() ?></p>
                             </div>
                         </div>
                         <div class="terms" id = "term1">

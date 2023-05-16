@@ -9,37 +9,43 @@
     <div class = "all-content">
         <div class ="add-client">
             <div class="add-client-nav">
-                <button class="second-button-form" type="submit">Add Client</button>
+                <button class="second-button-form" type="submit" form="addClientForm">Add Client</button>
             </div>
             <div  class ="form-add-client">
-                <form class = form-class id = "navForm" method="POST" action="/dodaj_usluge" >
+                <form class = form-class id = "addClientForm" method="POST" action="addClient" >
+                    <?php if(isset($messages)){
+                        foreach ($messages as $message) {
+                            echo $message;
+                        }
+                    }
+                    ?>
                     <div class = "first-form">
                         <label>Name and Surname:</label>
-                         <input type="text" name="name_and_surname">
+                         <input type="text" name="nameAndSurname" placeholder="name_and_surname">
                     </div>
                     <div class = "first-form">
                         <label>Adress:</label>
-                         <input type="text" name="adress">
+                         <input type="text" name="address" placeholder="adress">
                     </div>
                     <div class = "first-form">
                         <label>Phone-Number:</label>
-                         <input type="number" name="phone-number">
+                         <input type="number" name="phoneNumber" placeholder="phone-number">
                     </div>
                     <div class = "first-form">
                         <label>Email:</label>
-                         <input type="email" name="email">
+                         <input type="email" name="email" placeholder="email">
                     </div>
                     <div class = "first-form">
                         <label>Cars:</label>
-                        <input type= "text" name="cars">    
+                        <input type= "text" name="cars" placeholder="cars">    
                     </div>
 
             
                         
-                    </form>
+                </form>
             </div>
             <div class="come-back-client-button">
-                <a href="clients.php" class="client-menu">Client</a>
+                <a href="clients" class="client-menu">Client</a>
             </div>
         </div>
     </div>

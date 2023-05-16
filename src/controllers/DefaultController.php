@@ -14,21 +14,21 @@ class DefaultController extends AppController{
         $this->render('history');
     }
 
-    public function calander() {
-        $this->render('calander');
+    public function calendar() {
+        $this->render('calendar');
     }
 
-    public function price_list() {
-        $this->render('price-list');
+    public function priceList() {
+        $this->render('priceList');
     }
 
-    public function add_client() {
-        $this->render('add_client');
-    }
-    
-    public function add_car(){
-        $this->render('add_car');
-    }
+//    public function add_client() {
+//        $this->render('addClient'); /// chyba robię to drugi raz w ClientController
+//    }
+
+//    public function add_car(){
+//        $this->render('add_car');
+//    }
     
     
     

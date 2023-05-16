@@ -43,7 +43,7 @@
             <main class="main">
                 <header class = "header">
                     <div class="add-client">
-                        <a href="add_client.php">
+                        <a href="addClient.php">
                             <i class="fa-solid fa-plus"></i>
                             add client</a>
                     </div>
@@ -57,15 +57,15 @@
                     <div class ="add-service">
                         <div class="nav-service" id="navService"><h1>Add a service</h1></div>
                             <div class = "form-service-hidden" class = "form-serivce" id ="formService">
-	                            <form class = form-class id = "navForm" method="POST" action="/dodaj_usluge" >
+	                            <form class = form-class id = "navForm" method="POST" action="priceList" >
 		                            <div class = "first-form">
                                         <label>Name of service:</label>
-                                        <input type="text" name="nazwa_uslugi">
+                                        <input type="text" name="nameOfService" placeholder="name of service">
                                     </div>
 		                            <div class = "second-form">
                                         <label>Price:</label>
-		                                <input type="number" name="cena">
-                                        <button class="second-button-form" type="submit">Add</button>
+		                                <input type="number" name="prices" placeholder="prices">
+                                        <button class="second-button-form" type="submit" form="navForm">Add</button>
 		                                
                                     </div>
 
@@ -81,14 +81,16 @@
                             </div>
                             <div class = "each-service">
                                 <h1>Service:</h1>
-                                <p>Wymiana kół</p>
+<!--                                <p>--><?php //=$priceList ->getNameOfService() ?><!--</p>-->
+                                <p>wymiana opon</p>
                             </div>
                             <div class="each-price" >
                                 <h1>Price:</h1>
+<!--                                <p>--><?php //=$priceList ->getPrices() ?><!--</p>-->
                                 <p>300</p>
                             </div>
                         </div>
-                        <div class="services" id = "service1">
+                        <div class="services" id = "service2">
                             <div class="each-img">
                                 <img class="price-img"  src="public/img/Price-list/wrench.svg">
                             </div>
@@ -101,7 +103,7 @@
                                 <p>300</p>
                             </div>
                         </div>
-                        <div class="services" id = "service1">
+                        <div class="services" id = "service3">
                             <div class="each-img">
                                 <img class="price-img"  src="public/img/Price-list/wrench.svg">
                             </div>
@@ -114,7 +116,7 @@
                                 <p>300</p>
                             </div>
                         </div>
-                        <div class="services" id = "service1">
+                        <div class="services" id = "service4">
                             <div class="each-img">
                                 <img class="price-img"  src="public/img/Price-list/wrench.svg">
                             </div>
@@ -127,7 +129,7 @@
                                 <p>300</p>
                             </div>
                         </div>
-                        <div class="services" id = "service1">
+                        <div class="services" id = "service5">
                             <div class="each-img">
                                 <img class="price-img"  src="public/img/Price-list/wrench.svg">
                             </div>
@@ -140,7 +142,7 @@
                                 <p>300</p>
                             </div>
                         </div>
-                        <div class="services" id = "service1">
+                        <div class="services" id = "service6">
                             <div class="each-img">
                                 <img class="price-img"  src="public/img/Price-list/wrench.svg">
                             </div>

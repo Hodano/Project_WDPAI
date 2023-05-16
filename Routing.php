@@ -1,6 +1,11 @@
 <?php
 require_once 'src/controllers/DefaultController.php';
 require_once 'src/controllers/SecurityController.php';
+require_once 'src/controllers/ClientController.php';
+require_once 'src/controllers/CarController.php';
+require_once 'src/controllers/PriceListController.php';
+require_once 'src/controllers/CalendarController.php';
+require_once 'src/controllers/HistoryController.php';
 class Routing{
     public static $routes;
 
