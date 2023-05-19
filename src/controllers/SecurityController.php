@@ -11,7 +11,7 @@ class SecurityController extends AppController{
         $userRepository = UserRepository::getInstance();
 
         if(!$this->isPost()){
-            $this->login('login');
+            $this->render('login');
         }
 
         $email = $_POST["email"];

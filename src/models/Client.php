@@ -8,7 +8,7 @@ class Client
     private $email;
     private $cars; //Lista samochodów
 
-    public function __construct($nameAndSurname, $address, $phoneNumber, $email, $cars)
+    public function __construct($nameAndSurname, $address, $phoneNumber, $email, $cars = " ")
     {
         $this->nameAndSurname = $nameAndSurname;
         $this->address = $address;

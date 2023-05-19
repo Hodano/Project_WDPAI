@@ -5,16 +5,16 @@ require_once __DIR__.'/../models/User.php';
 
 class UserRepository extends Repository
 {
-    protected static $instance;
-
-    public static function getInstance(): UserRepository
-    {
-        if (!self::$instance) {
-            self::$instance = new UserRepository();
-                }
-
-        return self::$instance;
-    }
+//    protected static $instance;
+//
+//    public static function getInstance(): UserRepository
+//    {
+//        if (!self::$instance) {
+//            self::$instance = new UserRepository();
+//                }
+//
+//        return self::$instance;
+//    }
     public function getUser(string $email): ?User{ //nowy obiekt uzytkownika wypelnic danymi oraz zwrocic.
         $stmt = $this ->database->concect()->prepare('SELECT * FROM public.users WHERE email = :email');
         $stmt->bindParam(':email',$email,PDO::PARAM_STR);
@@ -33,4 +33,6 @@ class UserRepository extends Repository
             $user['surname']
         );
     }
+
+
 }
