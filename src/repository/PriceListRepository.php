@@ -11,7 +11,7 @@ class PriceListRepository extends Repository
 
         $stmt->execute([
             $priceList->getNameOfService(),
-            $priceList->getPrices(),
+            $priceList->getPrices()
 
         ]);
 

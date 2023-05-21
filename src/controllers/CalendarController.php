@@ -10,6 +10,7 @@ class CalendarController extends AppController
 
     public function __construct()
     {
+        parent::__construct();
         $this->calendarRepository = CalendarRepository::getInstance();
     }
 
@@ -18,8 +19,9 @@ class CalendarController extends AppController
     {
         if ($this->isPost()) {
 
-            $calendar = new Calendar($_POST['dateOfEvent'],$_POST['event']); /// sprawdzamy czy dodawanie działa.
+            $calendar = new Calendar($_POST['event']); /// sprawdzamy czy dodawanie działa.
             //dodawanie projektu, tak jak userów do zmiany
+            $this->calendarRepository->addCalendar($calendar);
 
             return $this->render('calendar', ["messages" => $this->messages, "calendar" =>$calendar]);
 

@@ -7,33 +7,23 @@ class Car
     private $yearOfProduction;
     private $carMileage;
     private $color;
-    private $clientName;
     private $history;
     /// dodanie historii ale to później
 
-    public function __construct($carModel, $bodyType, $yearOfProduction, $carMileage, $color, $clientName)
+    public function __construct($carModel, $bodyType, $yearOfProduction, $carMileage, $color)
     {
         $this->carModel = $carModel;
         $this->bodyType = $bodyType;
         $this->yearOfProduction = $yearOfProduction;
         $this->carMileage = $carMileage;
         $this->color = $color;
-        $this->clientName = $clientName;
+
     }
 
 
 
 
-    public function getClientName():string
-    {
-        return $this->clientName;
-    }
 
-
-    public function setClientName(string $clientName): void
-    {
-        $this->clientName = $clientName;
-    }
 
 
 

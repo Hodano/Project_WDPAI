@@ -56,10 +56,6 @@
                     <div class ="add-car">
                             <div class = "form-car-hidden" class = "form-car" id ="formCar">
 	                            <form class = form-class id = "navFormCar" method="POST" action="history" >
-		                            <div class = "first-form">
-                                        <label>Data of historyCar:</label>
-                                        <input type="date" name="dateOfHistoryCar">
-                                    </div>
 		                            <div class = "second-form">
                                         <label>Description history:</label>
 		                                <input type="text" name="descriptionHistory">

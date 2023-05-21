@@ -40,10 +40,10 @@
                         <label>Color:</label>
                          <input type="text" name="color" placeholder="color">
                     </div>
-                    <div class = "first-form">
-                        <label>Client name:</label>
-                        <input type="text" name="clientName" placeholder="clientName">
-                    </div>
+<!--                    <div class = "first-form">-->
+<!--                        <label>Client name:</label>-->
+<!--                        <input type="text" name="clientName" placeholder="clientName">-->
+<!--                    </div>-->
     
 
             

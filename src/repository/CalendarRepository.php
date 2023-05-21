@@ -9,10 +9,9 @@ class CalendarRepository extends Repository
         VALUES (?,?)
         ');
 
-        $assignedById = 3; //Musi byc user z takim idikiem(chyba można wyjebac)
 
         $stmt->execute([
-            $date->format('y-m-d'),
+            $date->format('Y-m-d'),
             $calendar->getEvent()
         ]);
 
