@@ -4,7 +4,7 @@ require_once __DIR__.'/../models/Client.php';
 class ClientRepository extends Repository
 {
     public function getClient( string $name): ?Client{
-        $stmt = $this ->database->concect()->prepare('SELECT * FROM public.client WHERE name = :name');
+        $stmt = $this ->database->concect()->prepare('SELECT * FROM public.clients WHERE name = :name');
         $stmt->bindParam(':name',$name,PDO::PARAM_STR);
         $stmt->execute();
 
@@ -20,5 +20,22 @@ class ClientRepository extends Repository
             $client['email']
             #cars
         );
+    }
+    public function addClient(Client $client):void{
+        $date = new DateTime();
+        $stmt = $this ->database->concect()->prepare('INSERT INTO clients(name,address,phone_number,email,id_assigned_by)
+        VALUES (?,?,?,?,?)
+        ');
+
+        $assignedById = 3;
+
+        $stmt->execute([
+           $client->getNameAndSurname(),
+            $client->getAddress(),
+            $client->getPhoneNumber(),
+            $client->getEmail(),
+            $assignedById
+        ]);
+
     }
 }

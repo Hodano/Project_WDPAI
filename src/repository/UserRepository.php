@@ -16,7 +16,7 @@ class UserRepository extends Repository
 //        return self::$instance;
 //    }
     public function getUser(string $email): ?User{ //nowy obiekt uzytkownika wypelnic danymi oraz zwrocic.
-        $stmt = $this ->database->concect()->prepare('SELECT * FROM public.users WHERE email = :email');
+        $stmt = $this ->database->concect()->prepare('SELECT * FROM public.users JOIN public.user_detaills ON users.id_user_details = user_detaills.id WHERE users.email= :email ');
         $stmt->bindParam(':email',$email,PDO::PARAM_STR);
         $stmt->execute();
 
