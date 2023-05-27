@@ -5,9 +5,9 @@ $path = trim($_SERVER['REQUEST_URI'], '/');
 $path = parse_url($path, PHP_URL_PATH);
 
 Routing::get('', "DefaultController");
-Routing::get('history', "CarController");
-Routing::get('calendar', "DefaultController");
-Routing::get('priceList', "DefaultController");
+Routing::get('history', "HistoryController");
+Routing::get('calendar', "CalendarController");
+Routing::get('priceList', "PriceListController");
 Routing::get('clients', "ClientController");
 
 

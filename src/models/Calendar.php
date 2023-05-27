@@ -2,12 +2,14 @@
 
 class Calendar
 {
+    private $dateEvent;
 
     private $event;
 
-    public function __construct($event)
+    public function __construct($event,$dateEvent )
     {
         $this->event = $event;
+        $this->dateEvent = $dateEvent;
     }
 
 
@@ -25,6 +27,19 @@ class Calendar
     {
         $this->event = $event;
     }
+
+
+    public function getDateEvent():string
+    {
+        return $this->dateEvent;
+    }
+
+
+    public function setDateEvent(string $dateEvent): void
+    {
+        $this->dateEvent = $dateEvent;
+    }
+
 
 
 }

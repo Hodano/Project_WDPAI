@@ -1,5 +1,4 @@
 <?php
-
 require_once 'AppController.php';
 require_once __DIR__ . '/../models/Calendar.php';
 require_once __DIR__.'/../repository/CalendarRepository.php';
@@ -14,21 +13,25 @@ class CalendarController extends AppController
         $this->calendarRepository = CalendarRepository::getInstance();
     }
 
-
     public function calendar()
     {
         if ($this->isPost()) {
 
-            $calendar = new Calendar($_POST['event']); /// sprawdzamy czy dodawanie działa.
-            //dodawanie projektu, tak jak userów do zmiany
+
+            $calendar = new Calendar($_POST ['event'], $_POST['dateEvent']); /// sprawdzamy czy dodawanie działa.
             $this->calendarRepository->addCalendar($calendar);
 
-            return $this->render('calendar', ["messages" => $this->messages, "calendar" =>$calendar]);
+            return $this->render('calendar', [
+                'calendar'=>$this->calendarRepository->getCalendar(),
+                "messages" => $this->messages]);
 
-
+        }
+        if($this->isGet())
+        {
+            $calendar = $this->calendarRepository->getCalendar();
+            return $this->render('calendar',['calendar' =>$calendar]);
         }
 
         return $this->render('calendar', ["messages" => $this->messages ]);
-
     }
 }

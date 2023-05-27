@@ -33,8 +33,4 @@ class HistoryController extends AppController
 
     }
 
-    public function car() {
-        $cars = $this->carRepository->getCars();
-        $this->render('history',['cars'=>$cars]);
-    }
 }

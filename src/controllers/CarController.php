@@ -33,7 +33,7 @@ class CarController extends AppController
         return $this->render('addCar', ["messages" => $this->messages ]); //dlaczego nas przenosi do addCar a nie history
 
     }
-    public function car() {
+    public function history() {
         $cars = $this->carRepository->getCars();
         $this->render('history',['cars'=>$cars]);
     }

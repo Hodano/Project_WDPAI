@@ -21,11 +21,17 @@ class PriceListController extends AppController
             $priceList = new PriceList($_POST['nameOfService'],$_POST['prices']); /// sprawdzamy czy dodawanie działa.
             $this->priceListRepository->addPriceList($priceList);
 
-            return $this->render('priceList', ["messages" => $this->messages, "priceList" =>$priceList]);
+            return $this->render('priceList', [
+                'priceList' =>$this->priceListRepository->getPriceList(),
+                "messages" => $this->messages]);
 
 
         }
-
+        if($this->isGet())
+        {
+           $priceList = $this->priceListRepository->getPriceList();
+           return $this->render('priceList',['priceList' =>$priceList]);
+        }
         return $this->render('priceList', ["messages" => $this->messages ]);
 
     }

@@ -74,88 +74,26 @@
 	                            </form>
                             </div>
                     </div>
-                    <div class = "display-service">
-                        <div class="services" id = "service1">
-                            <div class="each-img">
-                                <img class="price-img"  src="public/img/Price-list/wrench.svg">
+
+                        <div class = "display-service">
+                            <?php foreach ($priceList as $price):?>
+                            <div class="services" >
+                                <div class="each-img">
+                                    <img class="price-img"  src="public/img/Price-list/wrench.svg">
+                                </div>
+                                <div class = "each-service">
+                                    <h1>Service:</h1>
+                                    <p><?=$price ->getNameOfService();?></p>
+                                </div>
+                                <div class="each-price" >
+                                    <h1>Price:</h1>
+                                    <p><?=$price ->getPrices();?></p>
+                                </div>
                             </div>
-                            <div class = "each-service">
-                                <h1>Service:</h1>
-<!--                                <p>--><?php //=$priceList ->getNameOfService() ?><!--</p>-->
-                                <p>wymiana opon</p>
-                            </div>
-                            <div class="each-price" >
-                                <h1>Price:</h1>
-<!--                                <p>--><?php //=$priceList ->getPrices() ?><!--</p>-->
-                                <p>300</p>
-                            </div>
+                            <?php endforeach; ?>
                         </div>
-                        <div class="services" id = "service2">
-                            <div class="each-img">
-                                <img class="price-img"  src="public/img/Price-list/wrench.svg">
-                            </div>
-                            <div class = "each-service">
-                                <h1>Service:</h1>
-                                <p>Wymiana kół</p>
-                            </div>
-                            <div class="each-price" >
-                                <h1>Price:</h1>
-                                <p>300</p>
-                            </div>
-                        </div>
-                        <div class="services" id = "service3">
-                            <div class="each-img">
-                                <img class="price-img"  src="public/img/Price-list/wrench.svg">
-                            </div>
-                            <div class = "each-service">
-                                <h1>Service:</h1>
-                                <p>Wymiana kół</p>
-                            </div>
-                            <div class="each-price" >
-                                <h1>Price:</h1>
-                                <p>300</p>
-                            </div>
-                        </div>
-                        <div class="services" id = "service4">
-                            <div class="each-img">
-                                <img class="price-img"  src="public/img/Price-list/wrench.svg">
-                            </div>
-                            <div class = "each-service">
-                                <h1>Service:</h1>
-                                <p>Wymiana kół</p>
-                            </div>
-                            <div class="each-price" >
-                                <h1>Price:</h1>
-                                <p>300</p>
-                            </div>
-                        </div>
-                        <div class="services" id = "service5">
-                            <div class="each-img">
-                                <img class="price-img"  src="public/img/Price-list/wrench.svg">
-                            </div>
-                            <div class = "each-service">
-                                <h1>Service:</h1>
-                                <p>Wymiana kół</p>
-                            </div>
-                            <div class="each-price" >
-                                <h1>Price:</h1>
-                                <p>300</p>
-                            </div>
-                        </div>
-                        <div class="services" id = "service6">
-                            <div class="each-img">
-                                <img class="price-img"  src="public/img/Price-list/wrench.svg">
-                            </div>
-                            <div class = "each-service">
-                                <h1>Service:</h1>
-                                <p>Wymiana kół</p>
-                            </div>
-                            <div class="each-price" >
-                                <h1>Price:</h1>
-                                <p>300</p>
-                            </div>
-                        </div>
-                    </div>
+
+
                 </section>
             </main>
         </div>

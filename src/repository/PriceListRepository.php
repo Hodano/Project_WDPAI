@@ -16,5 +16,21 @@ class PriceListRepository extends Repository
         ]);
 
     }
+    public function getPriceList(): array{
+        $priceListArray = [];
+        $stmt = $this ->database->concect()->prepare('
+        SELECT * FROM "priceList" ');
+
+        $stmt->execute();
+        $pricesList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($pricesList as $priceList ){
+            $priceListArray[] = new PriceList(
+                $priceList['name_of_service'],
+                $priceList['prices'],
+            );
+        }
+        return $priceListArray;
+    }
 
 }

@@ -9,13 +9,13 @@ class DefaultController extends AppController{
 
 
 
-    public function calendar() {
-        $this->render('calendar');
-    }
+//    public function calendar() {
+//        $this->render('calendar');
+//    }
 
-    public function priceList() {
-        $this->render('priceList');
-    }
+//    public function priceList() {
+//        $this->render('priceList');
+//    }
 
 //    public function add_client() {
 //        $this->render('addClient'); /// chyba robię to drugi raz w ClientController
