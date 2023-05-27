@@ -68,94 +68,35 @@
 	                            </form>
                             </div>
                     </div>
+                    <?php foreach ($cars as $car):?>
                     <div class = "display-car">
-                        <div class="cars" id = "car1">
+                        <div class="cars" >
+
                             <div class = "each-car">
                                 <h1>Car Model:</h1>
-                                <p>Seat Leon</p>
+                                <p><?=$car ->getCarModel();?></p>
                                 <h1>Body type:</h1>
-                                <p>hatchback</p>
+                                <p><?=$car ->getbodyType();?></p>
                                 <h1>Productions:</h1>
-                                <p>1993</p>
+                                <p><?=$car ->getYearOfProduction();?></p>
                                 <h1>Client data</h1>
-                                <p>Mariusz</p>
+                                <p>Zobaczymy jeszcze, albo wypad albo nie wiem</p>
 
 
                             </div>
                             <div class="each-car">
                                 <h1>Car mileage:</h1>
-                                <p>1993</p>
+                                <p><?=$car ->getCarMileage();?></p>
                                 <h1>Color:</h1>
-                                <p>red</p>
+                                <p><?=$car ->getColor();?></p>
                                 <h1>Car history</h1>
                                 <div class="nav-car" id="navCar"><h1>Add</h1></div>
                             </div>
-<!--                            <div class = "each-car">-->
-<!--                                <h1>Car Model:</h1>-->
-<!--                                <p>--><?php //=$car ->getCarModel() ?><!--</p>-->
-<!--                                <h1>Body type:</h1>-->
-<!--                                <p>--><?php //=$car ->getBodyType() ?><!--</p>-->
-<!--                                <h1>Productions:</h1>-->
-<!--                                <p>--><?php //=$car ->getYearOfProduction() ?><!--</p>-->
-<!--                                <h1>Car mileage:</h1>-->
-<!--                                <p>--><?php //=$car ->getCarMileage() ?><!--</p>-->
-<!---->
-<!---->
-<!--                            </div>-->
-<!--                            <div class="each-car">-->
-<!--                                <h1>Color:</h1>-->
-<!--                                <p>--><?php //=$car ->getColor() ?><!--</p>-->
-<!--                                <h1>Client data</h1>-->
-<!--                                <p>--><?php //=$car ->getClientName() ?><!--</p>-->
-<!--                                <h1>Car history</h1>-->
-<!--                                <div class="nav-car" id="navCar"><h1>Add</h1></div>-->
-<!--                            </div>-->
-                            <div class=" description">
-                                <div>
-                                    <h1>Car History</h1>
-<!--                                    <p>--><?php //=$history ->getDateOfHistoryCar() ?><!--</p>-->
-<!--                                    <p>--><?php //=$history ->getDescriptionHistory() ?><!--</p>-->
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="cars" id = "car2">
-                            <div class = "each-car">
-                                <h1>Car Model:</h1>
-                                <p>Seat Leon</p>
-                                <h1>Body type:</h1>
-                                <p>hatchback</p>
-                                <h1>Productions:</h1>
-                                <p>1993</p>
-                                <h1>Client data</h1>
-                                <p>Mariusz</p>
-                                
-                                
-                            </div>
-                            <div class="each-car">
-                                <h1>Car mileage:</h1>
-                                <p>1993</p>
-                                <h1>Color:</h1>
-                                <p>red</p>
-                                <h1>Car history</h1>
-                                <div class="nav-car" id="navCar"><h1>Add</h1></div>
-                            </div>
+
                             <div class=" description">
                                 <div>
                                     <h1>Car History</h1>
                                     <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddasdasdasdasdsadadsadsadasdsadasdsadsadsadsadasdsadsasdasdasdsadasdasdasdsadsadsadsadasdsadsadaassdasdasdasdasdasdsadasdsaddasdasdsadsadsadassas</p>
-                                    <p>20.04.2010</p>
                                     <p>dsadasdsdsadsaddsas</p>
                                     <p>20.04.2010</p>
                                     <p>dsadasdsdsadsaddsas</p>
@@ -165,160 +106,12 @@
                                     <p>dsadasdsdsadsaddsas</p>
                                     <p>20.04.2010</p>
                                     <p>dsadasdsdsadsaddsas</p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="cars" id = "car3">
-                            <div class = "each-car">
-                                <h1>Car Model:</h1>
-                                <p>Seat Leon</p>
-                                <h1>Body type:</h1>
-                                <p>hatchback</p>
-                                <h1>Productions:</h1>
-                                <p>1993</p>
-                                <h1>Client data</h1>
-                                <p>Mariusz</p>
-                                
-                                
-                            </div>
-                            <div class="each-car">
-                                <h1>Car mileage:</h1>
-                                <p>1993</p>
-                                <h1>Color:</h1>
-                                <p>red</p>
-                                <h1>Car history</h1>
-                                <div class="nav-car" id="navCar"><h1>Add</h1></div>
-                                
-                            </div>
-                            <div class=" description">
-                                <div>
-                                    <h1>Car History</h1>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddasdasdasdasdsadadsadsadasdsadasdsadsadsadsadasdsadsasdasdasdsadasdasdasdsadsadsadsadasdsadsadaassdasdasdasdasdasdsadasdsaddasdasdsadsadsadassas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="cars" id = "car4">
-                            <div class = "each-car">
-                                <h1>Car Model:</h1>
-                                <p>Seat Leon</p>
-                                <h1>Body type:</h1>
-                                <p>hatchback</p>
-                                <h1>Productions:</h1>
-                                <p>1993</p>
-                                <h1>Client data</h1>
-                                <p>Mariusz</p>
-                                
-                                
-                            </div>
-                            <div class="each-car">
-                                <h1>Car mileage:</h1>
-                                <p>1993</p>
-                                <h1>Color:</h1>
-                                <p>red</p>
-                                <h1>Car history</h1>
-                                <div class="nav-car" id="navCar"><h1>Add</h1></div>
-                            </div>
-                            <div class=" description">
-                                <div>
-                                    <h1>Car History</h1>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddasdasdasdasdsadadsadsadasdsadasdsadsadsadsadasdsadsasdasdasdsadasdasdasdsadsadsadsadasdsadsadaassdasdasdasdasdasdsadasdsaddasdasdsadsadsadassas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="cars" id = "car5">
-                            <div class = "each-car">
-                                <h1>Car Model:</h1>
-                                <p>Seat Leon</p>
-                                <h1>Body type:</h1>
-                                <p>hatchback</p>
-                                <h1>Productions:</h1>
-                                <p>1993</p>
-                                <h1>Client data</h1>
-                                <p>Mariusz</p>
-                                
-                                
-                            </div>
-                            <div class="each-car">
-                                <h1>Car mileage:</h1>
-                                <p>1993</p>
-                                <h1>Color:</h1>
-                                <p>red</p>
-                                <h1>Car history</h1>
-                                <div class="nav-car" id="navCar"><h1>Add</h1></div>
-                            </div>
-                            <div class=" description">
-                                <div>
-                                    <h1>Car History</h1>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddasdasdasdasdsadadsadsadasdsadasdsadsadsadsadasdsadsasdasdasdsadasdasdasdsadsadsadsadasdsadsadaassdasdasdasdasdasdsadasdsaddasdasdsadsadsadassas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="cars" id = "car6">
-                            <div class = "each-car">
-                                <h1>Car Model:</h1>
-                                <p>Seat Leon</p>
-                                <h1>Body type:</h1>
-                                <p>hatchback</p>
-                                <h1>Productions:</h1>
-                                <p>1993</p>
-                                <h1>Client data</h1>
-                                <p>Mariusz</p>
-                                
-                                
-                            </div>
-                            <div class="each-car">
-                                <h1>Car mileage:</h1>
-                                <p>1993</p>
-                                <h1>Color:</h1>
-                                <p>red</p>
-                                <h1>Car history</h1>
-                                <div class="nav-car" id="navCar"><h1>Add</h1></div>
-                            </div>
-                            <div class=" description">
-                                <div>
-                                    
                                 </div>
                             </div>
                             
                         </div>
                     </div>
+                    <?php endforeach; ?>
                 </section>
             </main>
         </div>

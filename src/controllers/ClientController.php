@@ -24,13 +24,20 @@ class ClientController extends AppController
             $client = new Client($_POST['nameAndSurname'],$_POST['address'],$_POST['phoneNumber'],$_POST['email'],$_POST['cars']); /// sprawdzamy czy dodawanie działa.
             //dodawanie projektu, tak jak userów do zmiany
             $this->clientRepository->addClient($client);
-            return $this->render('clients', ["messages" => $this->messages, "client" =>$client]);
+            return $this->render('clients', [
+                'clients' => $this->clientRepository->getClients(),
+                "messages" => $this->messages]);
+            ///Raczej ten return do wyjebania bo tam dodaje
 
 
         }
 
         return $this->render('addClient', ["messages" => $this->messages ]);
 
+    }
+    public function clients() { /// views all data
+        $clients = $this->clientRepository->getClients();
+        $this->render('clients',['clients' => $clients]);
     }
     ///Jakby było trzeba.
     public function getClientByName(){
@@ -49,4 +56,6 @@ class ClientController extends AppController
 
         return $this->render('clients', ["messages" => $this->messages, "client" =>$client]);
     }
+
+
 }

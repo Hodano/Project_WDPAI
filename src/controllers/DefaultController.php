@@ -6,13 +6,8 @@ class DefaultController extends AppController{
         $this->render('login');
     }
 
-    public function clients() {
-        $this->render('clients');
-    }
 
-    public function history() {
-        $this->render('history');
-    }
+
 
     public function calendar() {
         $this->render('calendar');

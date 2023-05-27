@@ -21,6 +21,25 @@ class ClientRepository extends Repository
             #cars
         );
     }
+    public function getClients(): array{
+        $clientsArray = [];
+        $stmt = $this ->database->concect()->prepare("
+        SELECT * FROM clients");
+
+        $stmt->execute();
+        $clients = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($clients as $client ){
+            $clientsArray[] = new Client(
+                $client['name'],
+                $client['address'],
+                $client['phone_number'],
+                $client['email']
+            );
+        }
+        return $clientsArray;
+    }
+
     public function addClient(Client $client):void{
         $date = new DateTime();
         $stmt = $this ->database->concect()->prepare('INSERT INTO clients(name,address,phone_number,email,id_assigned_by)

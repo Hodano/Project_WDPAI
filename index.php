@@ -5,10 +5,10 @@ $path = trim($_SERVER['REQUEST_URI'], '/');
 $path = parse_url($path, PHP_URL_PATH);
 
 Routing::get('', "DefaultController");
-Routing::get('history', "DefaultController");
+Routing::get('history', "CarController");
 Routing::get('calendar', "DefaultController");
 Routing::get('priceList', "DefaultController");
-Routing::get('clients', "DefaultController");
+Routing::get('clients', "ClientController");
 
 
 Routing::post('login', "SecurityController");
@@ -22,5 +22,5 @@ Routing::post('history', "HistoryController");
 Routing::run($path);
 
 
-echo "Jestem plikiem startowym, będę tu podpinał wszystkie pdasdasliki";
+
 ?>

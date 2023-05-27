@@ -23,13 +23,19 @@ class CarController extends AppController
             //dodawanie projektu, tak jak userów do zmiany
             $this->carRepository->addCar($car);
 
-            return $this->render('history', ["messages" => $this->messages, "car" =>$car]);
+            return $this->render('history', [
+                'cars' => $this->carRepository->getCars(),
+                "messages" => $this->messages]);
 
 
         }
 
         return $this->render('addCar', ["messages" => $this->messages ]); //dlaczego nas przenosi do addCar a nie history
 
+    }
+    public function car() {
+        $cars = $this->carRepository->getCars();
+        $this->render('history',['cars'=>$cars]);
     }
 
 

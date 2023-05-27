@@ -53,50 +53,31 @@
                     </div>
                 </header>
                 <section class="client-section">
-                    <div class = "clientss"  id = "client-1"> 
-<!--                        <div>-->
-<!--                            <h2>Name</h2>-->
-<!--                            <p>Mariusz Hodana</p>-->
-<!--                        <img class="image-client" src="public/img/clients/client.svg">-->
-<!--                        </div>-->
-<!--                        <div class = "elo">-->
-<!--                            <div class = "data-class-grid">-->
-<!--                                <h4>Adress</h4>-->
-<!--                                <p>Myślenice</p>-->
-<!--                                <h4>Phone-Number</h4>-->
-<!--                                <p>1234567</p>-->
-<!--                                <h4>Email</h4>-->
-<!--                                <p>mariusz11@oent.pl</p>-->
-<!--                                <h4>Cars</h4>-->
-<!--                                <p>narazie String</p>-->
-<!--                                <h4>-->
-<!--                                    <a href="addCar.php"> add car</a>-->
-<!--                                    -->
-<!--                                </h4>-->
-<!--                            </div>-->
-<!--                        </div>-->
+                    <?php foreach ($clients as $client):?>
+                    <div class = "clientss" >
                         <div>
-                                                        <h2>Name</h2>
-                                                        <p><?=$client ->getNameAndSurname() ?></p>
-                                                        <img class="image-client" src="public/img/clients/client.svg">
-                                                    </div>
-                                                    <div class = "elo">
-                                                        <div class = "data-class-grid">
-                                                            <h4>Adress</h4>
-                                                            <p><?=$client ->getAddress() ?></p>
-                                                            <h4>Phone-Number</h4>
-                                                            <p><?=$client ->getPhoneNumber() ?></p>
-                                                            <h4>Email</h4>
-                                                            <p><?=$client ->getEmail() ?></p>
-                                                            <h4>Cars</h4>
-                                                            <p><?=$client ->getCars() ?></p>
-                                                            <h4>
-                                                                <a href="addCar.php"> add car</a>
+                            <h2>Name</h2>
+                            <p><?=$client ->getNameAndSurname();?></p>
+                        <img class="image-client" src="public/img/clients/client.svg">
+                        </div>
+                        <div class = "elo">
+                            <div class = "data-class-grid">
+                                <h4>Adress</h4>
+                                <p><?=$client ->getAddress();?></p>
+                                <h4>Phone-Number</h4>
+                                <p><?=$client ->getPhoneNumber()?></p>
+                                <h4>Email</h4>
+                                <p><?=$client ->getEmail();?></p>
+                                <h4>Cars</h4>
+                                <p>Prawdopodobnie do wyjebania</p>
+                                <h4>
+                                    <a href="addCar.php"> add car</a>
 
-                                                            </h4>
-                                                        </div>
-                                                    </div>
+                                </h4>
+                            </div>
+                        </div>
                     </div>
+                    <?php endforeach; ?>
 <!--
                     <div class = "clientss" id = "client-2">
                         <div>
