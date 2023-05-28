@@ -3,23 +3,14 @@ require_once "Repository.php";
 require_once __DIR__.'/../models/Client.php';
 class ClientRepository extends Repository
 {
-    public function getClient( string $name): ?Client{
-        $stmt = $this ->database->connect()->prepare('SELECT * FROM public.clients WHERE name = :name');
-        $stmt->bindParam(':name',$name,PDO::PARAM_STR);
+    public function getClientByName( string $name) {
+        $name = '%'.strtolower($name).'%';
+        $stmt = $this ->database->connect()->prepare('SELECT * FROM public.clients WHERE LOWER(name) LIKE :search_name');
+        $stmt->bindParam(':search_name',$name,PDO::PARAM_STR);
         $stmt->execute();
 
-        $client = $stmt->fetch(PDO::FETCH_ASSOC);
+        return  $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        if($client == false){
-            throw new Exception("Client not found in database");
-        }
-        return new Client(
-            $client['name'],
-            $client['address'],
-            $client['phone_number'],
-            $client['email']
-            #cars
-        );
     }
     public function getClients(): array{
         $clientsArray = [];

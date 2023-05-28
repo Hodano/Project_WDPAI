@@ -4,6 +4,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/style-client.css">
     <script src="https://kit.fontawesome.com/d10620c300.js" crossorigin="anonymous"></script>
     <script src="public/Js/scrypt-client.js"></script>
+    <script type="text/javascript" src="./public/Js/scrypt-search-client.js" defer></script>
     <title> Clients Page </title>
 </head>
 <body>
@@ -47,9 +48,9 @@
                             add client</a>
                     </div>
                     <div class="search-client">
-                        <form class="form-class1">
+
                             <input class="search-class" placeholder="search client">
-                        </form>
+
                     </div>
                 </header>
                 <section class="client-section">
@@ -57,17 +58,17 @@
                     <div class = "clientss" >
                         <div>
                             <h2>Name</h2>
-                            <p><?=$client ->getNameAndSurname();?></p>
+                            <p class="name"><?=$client ->getNameAndSurname();?></p>
                         <img class="image-client" src="public/img/clients/client.svg">
                         </div>
                         <div class = "elo">
                             <div class = "data-class-grid">
                                 <h4>Adress</h4>
-                                <p><?=$client ->getAddress();?></p>
+                                <p class="address"><?=$client ->getAddress();?></p>
                                 <h4>Phone-Number</h4>
-                                <p><?=$client ->getPhoneNumber()?></p>
+                                <p class="phoneNumber"><?=$client ->getPhoneNumber()?></p>
                                 <h4>Email</h4>
-                                <p><?=$client ->getEmail();?></p>
+                                <p class="email"><?=$client ->getEmail();?></p>
                                 <h4>Cars</h4>
                                 <p>Prawdopodobnie do wyjebania</p>
                                 <h4>
@@ -78,123 +79,6 @@
                         </div>
                     </div>
                     <?php endforeach; ?>
-<!--
-                    <div class = "clientss" id = "client-2">
-                        <div>
-                            <h2>Name</h2>
-                            <p>Mariusz Hodana</p>
-                        <img class="image-client" src="public/img/clients/client.svg">
-                        </div>
-                        <div class = "elo">
-                            <div class = "data-class-grid">
-                                <h4>Adress</h4>
-                                <p>Myślenice</p>
-                                <h4>Phone-Number</h4>
-                                <p>321312321</p>
-                                <h4>Email</h4>
-                                <p>Mariuszelo@gmal.</p>
-                                <h4>Cars</h4>
-                                <p>Seat Leon</p>
-                                <h4>
-                                    <a href="addCar.php"> add car</a>
-                                    
-                                </h4>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class = "clientss" id = "client-3">
-                        <div>
-                            <h2>Name</h2>
-                            <p>Mariusz Hodana</p>
-                        <img class="image-client" src="public/img/clients/client.svg">
-                        </div>
-                        <div class = "elo">
-                            <div class = "data-class-grid">
-                                <h4>Adress</h4>
-                                <p>Myślenice</p>
-                                <h4>Phone-Number</h4>
-                                <p>321312321</p>
-                                <h4>Email</h4>
-                                <p>Mariuszelo@gmal.</p>
-                                <h4>Cars</h4>
-                                <p>Seat Leon</p>
-                                <h4>
-                                    <a href="addCar.php"> add car</a>
-                                    
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class = "clientss" id = "client-4"> 
-                        <div>
-                            <h2>Name</h2>
-                            <p>Mariusz Hodana</p>
-                        <img class="image-client" src="public/img/clients/client.svg">
-                        </div>
-                        <div class = "elo">
-                            <div class = "data-class-grid">
-                                <h4>Adress</h4>
-                                <p>Myślenice</p>
-                                <h4>Phone-Number</h4>
-                                <p>321312321</p>
-                                <h4>Email</h4>
-                                <p>Mariuszelo@gmal.</p>
-                                <h4>Cars</h4>
-                                <p>Seat Leon</p>
-                                <h4>
-                                    <a href="addCar.php"> add car</a>
-                                    
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class = "clientss" id = "client-5"> 
-                        <div>
-                            <h2>Name</h2>
-                            <p>Mariusz Hodana</p>
-                        <img class="image-client" src="public/img/clients/client.svg">
-                        </div>
-                        <div class = "elo">
-                            <div class = "data-class-grid">
-                                <h4>Adress</h4>
-                                <p>Myślenice</p>
-                                <h4>Phone-Number</h4>
-                                <p>321312321</p>
-                                <h4>Email</h4>
-                                <p>Mariuszelo@gmal.</p>
-                                <h4>Cars</h4>
-                                <p>Seat Leon</p>
-                                <h4>
-                                    <a href="addCar.php"> add car</a>
-                                    
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class = "clientss" id = "client-6"> 
-                        <div>
-                            <h2>Name</h2>
-                            <p>Mariusz Hodana</p>
-                        <img class="image-client" src="public/img/clients/client.svg">
-                        </div>
-                        <div class = "elo">
-                            <div class = "data-class-grid">
-                                <h4>Adress</h4>
-                                <p>Myślenice</p>
-                                <h4>Phone-Number</h4>
-                                <p>321312321</p>
-                                <h4>Email</h4>
-                                <p>Mariuszelo@gmal.</p>
-                                <h4>Cars</h4>
-                                <p>Seat Leon</p>
-                                <h4>
-                                    <a href="addCar.php"> add car</a>
-                                    
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
                 </section>
             </main>
         </div>
@@ -209,3 +93,28 @@
         </div>
     </div>
 </body>
+<template id="client-template">
+    <div class = "clientss" >
+        <div>
+            <h2>Name</h2>
+            <p class="name"></p>
+            <img class="image-client" src="public/img/clients/client.svg">
+        </div>
+        <div class = "elo">
+            <div class = "data-class-grid">
+                <h4>Adress</h4>
+                <p class="address"></p>
+                <h4>Phone-Number</h4>
+                <p class="phoneNumber"></p>
+                <h4>Email</h4>
+                <p class="email"></p>
+                <h4>Cars</h4>
+                <p>Prawdopodobnie do wyjebania</p>
+                <h4>
+                    <a href="addCar.php"> add car</a>
+
+                </h4>
+            </div>
+        </div>
+    </div>
+</template>

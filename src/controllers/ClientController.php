@@ -39,23 +39,37 @@ class ClientController extends AppController
         $clients = $this->clientRepository->getClients();
         $this->render('clients',['clients' => $clients]);
     }
-    ///Jakby było trzeba.
-    public function getClientByName(){
-        $clientRepository = ClientRepository::getInstance();
+//    ///Jakby było trzeba.
+//    public function getClientByName(){
+//        $clientRepository = ClientRepository::getInstance();
+//
+//        if(!$this->isPost()){
+//            $this->render('clients');
+//        }
+//        $name = $_POST['nameAndSurname'];
+//
+//        try {
+//            $client = $clientRepository->getClient($name);
+//        } catch (Exception $e1){
+//            return $this->render('clients', ['messages' => ['User no exist!']]);
+//        }
+//
+//        return $this->render('clients', ["messages" => $this->messages, "client" =>$client]);
+//    }
 
-        if(!$this->isPost()){
-            $this->render('clients');
+    public function search()
+    {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+
+            echo json_encode($this->clientRepository->getClientByName($decoded['search']));
         }
-        $name = $_POST['nameAndSurname'];
-
-        try {
-            $client = $clientRepository->getClient($name);
-        } catch (Exception $e1){
-            return $this->render('clients', ['messages' => ['User no exist!']]);
-        }
-
-        return $this->render('clients', ["messages" => $this->messages, "client" =>$client]);
     }
-
 
 }

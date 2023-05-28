@@ -19,6 +19,7 @@ Routing::post('priceList', "PriceListController");
 Routing::post('calendar', "CalendarController");
 Routing::post('history', "HistoryController");
 Routing::post('register', "SecurityController");
+Routing::post('search',"ClientController" );
 
 
 Routing::run($path);

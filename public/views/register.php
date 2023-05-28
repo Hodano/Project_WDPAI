@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="public/css/register.css">
     <script src="https://kit.fontawesome.com/d10620c300.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./public/Js/script-validation.js" defer></script>
+    <script type="text/javascript" src="./public/Js/scrypt-validation.js" defer></script>
     <title> Register </title>
 </head>
 <body>
