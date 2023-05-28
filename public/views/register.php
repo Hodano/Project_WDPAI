@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="public/css/style-add-user.css">
+    <link rel="stylesheet" type="text/css" href="public/css/register.css">
     <script src="https://kit.fontawesome.com/d10620c300.js" crossorigin="anonymous"></script>
-    <title> Add Client </title>
+    <script type="text/javascript" src="./public/Js/script-validation.js" defer></script>
+    <title> Register </title>
 </head>
 <body>
     <div class = "all-content">
