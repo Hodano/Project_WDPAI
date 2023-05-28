@@ -4,7 +4,7 @@ require_once __DIR__.'/../models/PriceList.php';
 class PriceListRepository extends Repository
 {
     public function addPriceList(PriceList $priceList):void{
-        $stmt = $this ->database->concect()->prepare('INSERT INTO "priceList"(name_of_service, prices)
+        $stmt = $this ->database->connect()->prepare('INSERT INTO "priceList"(name_of_service, prices)
         VALUES (?,?)
         ');
 
@@ -18,7 +18,7 @@ class PriceListRepository extends Repository
     }
     public function getPriceList(): array{
         $priceListArray = [];
-        $stmt = $this ->database->concect()->prepare('
+        $stmt = $this ->database->connect()->prepare('
         SELECT * FROM "priceList" ');
 
         $stmt->execute();

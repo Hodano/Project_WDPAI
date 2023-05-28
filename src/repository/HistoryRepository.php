@@ -5,7 +5,7 @@ class HistoryRepository extends Repository
 {
     public function addHistory(History $history):void{
         $date = new DateTime();
-        $stmt = $this ->database->concect()->prepare('INSERT INTO "history"(date_of_history_car, description_history)
+        $stmt = $this ->database->connect()->prepare('INSERT INTO "history"(date_of_history_car, description_history)
         VALUES (?,?)
         ');
 

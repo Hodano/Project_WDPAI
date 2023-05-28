@@ -4,11 +4,18 @@ require_once 'AppController.php';
 require_once __DIR__.'/../models/User.php';
 require_once __DIR__.'/../repository/UserRepository.php';
 class SecurityController extends AppController{
+    private $userRepository;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this-> userRepository = UserRepository::getInstance();
+    }
 
     public function login(){
 
+
 //        $user = new User('mariusz@pk.edu.pl','Janek','Adam','Bialy');//niby User w bazie danych./ w orginale jest bez !
-        $userRepository = UserRepository::getInstance();
 
         if(!$this->isPost()){
             $this->render('login');
@@ -19,7 +26,7 @@ class SecurityController extends AppController{
 
 
         try {
-            $user = $userRepository->getUser($email);
+            $user = $this-> userRepository->getUser($email);
         } catch (Exception $e){
             return $this->render('login', ['messages' => ['User no exist!']]);
         }
@@ -37,5 +44,31 @@ class SecurityController extends AppController{
         header("Location: {$url}/clients");
 
 
+    }
+
+    public function register()
+    {
+        if (!$this->isPost()) {
+            return $this->render('register');
+        }
+
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $confirmedPassword = $_POST['confirmedPassword'];
+        $name = $_POST['name'];
+        $surname = $_POST['surname'];
+        $phone = $_POST['phone'];
+        $address = $_POST['address'];
+
+
+        if ($password !== $confirmedPassword) {
+            return $this->render('register', ['messages' => ['Please provide proper password']]);
+        }
+
+        $user = new User($email, md5($password), $name, $surname,$phone,$address);
+
+        $this->userRepository->addUser($user);
+
+        return $this->render('login', ['messages' => ['You\'ve been succesfully registrated!']]);
     }
 }

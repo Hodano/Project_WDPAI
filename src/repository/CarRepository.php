@@ -5,7 +5,7 @@ class CarRepository extends Repository
 {
     public function getCars(): array{
         $carsArray = [];
-        $stmt = $this ->database->concect()->prepare("
+        $stmt = $this ->database->connect()->prepare("
         SELECT * FROM cars");
 
         $stmt->execute();
@@ -23,7 +23,7 @@ class CarRepository extends Repository
         return $carsArray;
     }
     public function addCar(Car $car):void{
-        $stmt = $this ->database->concect()->prepare('INSERT INTO cars(car_model, body_type, year_of_production, car_mileage, color)
+        $stmt = $this ->database->connect()->prepare('INSERT INTO cars(car_model, body_type, year_of_production, car_mileage, color)
         VALUES (?,?,?,?,?)
         ');
 

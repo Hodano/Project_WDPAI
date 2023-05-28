@@ -25,7 +25,9 @@
             <div class = "button-login-container">
                 
                     <button class="button-log-in" type="submit" form="logInForm">Log in</button>
-                    <button class="button-sign-up" type="button">Sign Up</button>  
+                    <button class="button-sign-up" type="button">
+                        <a href="register">Sign Up</a>
+                    </button>
                 
                 </div>
         </div>    

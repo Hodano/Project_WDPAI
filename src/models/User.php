@@ -12,15 +12,45 @@ class User
 
     private $surname;
 
+    private $phone;
+    private $address;
 
 
-    public function __construct(string $email, string $password, string $name, string $surname)
+    public function __construct(string $email, string $password, string $name, string $surname, string $phone, string $address)
     {
         $this->email = $email;
         $this->password = $password;
         $this->name = $name;
         $this->surname = $surname;
+        $this->phone = $phone;
+        $this->address=$address;
     }
+
+
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+
+
+    public function setPhone( $phone): void
+    {
+        $this->phone = $phone;
+    }
+
+
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+
+    public function setAddress( $address)
+    {
+        $this->address = $address;
+    }
+
 
 
     public function getEmail()

@@ -5,7 +5,7 @@ class CalendarRepository extends Repository
 {
     public function addCalendar(Calendar $calendar): void
     {
-        $stmt = $this->database->concect()->prepare('INSERT INTO calander(date_of_event, event)
+        $stmt = $this->database->connect()->prepare('INSERT INTO calander(date_of_event, event)
         VALUES (?,?)
         ');
 
@@ -18,7 +18,7 @@ class CalendarRepository extends Repository
     }
     public function getCalendar(): array{
         $calendarArray = [];
-        $stmt = $this ->database->concect()->prepare('
+        $stmt = $this ->database->connect()->prepare('
         SELECT * FROM "calander" ');
 
         $stmt->execute();

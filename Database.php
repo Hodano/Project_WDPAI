@@ -15,7 +15,7 @@ class Database
         $this -> host = HOST;
         $this -> database = DATABASE;
     }
-    public function concect(){
+    public function connect(){
         try {
             $connection = new PDO("pgsql:host=$this->host;port=5432;dbname=$this->database",
                 $this->username,
