@@ -74,6 +74,7 @@
 
                             <div class = "each-car">
                                 <h1>Car Model:</h1>
+
                                 <p><?=$car ->getCarModel();?></p>
                                 <h1>Body type:</h1>
                                 <p><?=$car ->getbodyType();?></p>
@@ -95,6 +96,14 @@
 
                             <div class=" description">
                                 <div>
+                                    <form class = form-class method="POST" action="history" >
+                                        <div class="second-form">
+                                            <label>Description history:</label>
+                                            <input type="hidden" name="id" value="<?=$car -> getId();?>">
+                                            <input type="text" name="descriptionHistory">
+                                            <button class="second-button-form" type="submit">Add</button>
+                                        </div>
+                                    </form>
                                     <h1>Car History</h1>
                                     <p>20.04.2010</p>
                                     <p>dsadasdsdsadsaddsas</p>

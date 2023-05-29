@@ -10,24 +10,38 @@ class Routing{
     public static $routes;
 
     public static function get($url, $controller){
-        self::$routes[$url] = $controller;
+        $key = "GET-".$url;
+        self::$routes[$key] = $controller;
     }
 
     public static function post($url, $controller){
-        self::$routes[$url] = $controller;
+        $key = "POST-".$url;
+        self::$routes[$key] = $controller;
     }
 
     public static function run($url){
+        $httpMethod = $_SERVER["REQUEST_METHOD"];
         $action = explode("/", $url)[0];
-
-        if(!array_key_exists($action, self::$routes)){
-            die("I think, this url is bad");
+        $controller = self::getRoute($action, $httpMethod);
+        if(!$controller)
+        {
+            die("Wrong url or method!");
         }
-        $controller = self::$routes[$action];
+
         $object = new $controller;
         $action = $action ?:'index';
 
         $object->$action();
+    }
+
+    private static function getRoute($url, $httpMethod)
+    {
+        $key = $httpMethod."-".$url;
+        if(!array_key_exists($key, self::$routes))
+        {
+            return null;
+        }
+        return self::$routes[$key];
     }
 }
 

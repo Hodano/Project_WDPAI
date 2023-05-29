@@ -12,7 +12,7 @@
                 <button class="second-button-form" type="submit" form="addClientForm">Add Client</button>
             </div>
             <div  class ="form-add-client">
-                <form class = form-class id = "addClientForm" method="POST" action="addClient" >
+                <form class = form-class id = "addClientForm" method="POST" action="addClientPost" >
                     <?php if(isset($messages)){
                         foreach ($messages as $message) {
                             echo $message;

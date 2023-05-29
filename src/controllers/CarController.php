@@ -14,7 +14,7 @@ class CarController extends AppController
         parent::__construct();
         $this->carRepository = CarRepository::getInstance();
     }
-    public function addCar()
+    public function addCarPost()
     {
         if ($this->isPost()) {
 
@@ -33,6 +33,10 @@ class CarController extends AppController
         return $this->render('addCar', ["messages" => $this->messages ]); //dlaczego nas przenosi do addCar a nie history
 
     }
+    public function addCar(){
+        return $this->render('addCar',["messages" =>$this->messages]);
+    }
+
     public function history() {
         $cars = $this->carRepository->getCars();
         $this->render('history',['cars'=>$cars]);

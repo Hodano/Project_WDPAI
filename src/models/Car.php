@@ -2,6 +2,7 @@
 
 class Car
 {
+    private $id;
     private $carModel;
     private $bodyType;
     private $yearOfProduction;
@@ -12,6 +13,8 @@ class Car
 
     public function __construct($carModel, $bodyType, $yearOfProduction, $carMileage, $color)
     {
+        //TODO: Pobierać ID
+        $this->id = 1;
         $this->carModel = $carModel;
         $this->bodyType = $bodyType;
         $this->yearOfProduction = $yearOfProduction;
@@ -20,11 +23,15 @@ class Car
 
     }
 
+    public function getId(): int
+    {
+        return $this->id;
+    }
 
-
-
-
-
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
 
 
     public function getCarModel():string
