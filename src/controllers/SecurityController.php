@@ -46,7 +46,7 @@ class SecurityController extends AppController{
 
     }
 
-    public function register()
+    public function registerPost()
     {
         if (!$this->isPost()) {
             return $this->render('register');
@@ -71,4 +71,8 @@ class SecurityController extends AppController{
 
         return $this->render('login', ['messages' => ['You\'ve been succesfully registrated!']]);
     }
+    public function register(){
+        return $this->render('register');
+    }
+
 }

@@ -13,7 +13,7 @@
                 <button class="second-button-form" type="submit" form="addUser">Register User</button>
             </div>
             <div  class ="form-add-user">
-                <form class = register id = "addUser" method="POST" action="register" >
+                <form class = register id = "addUser" method="POST" action="registerPost" >
                     <?php if(isset($messages)){
                         foreach ($messages as $message) {
                             echo $message;

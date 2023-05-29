@@ -97,6 +97,10 @@
                             <div class=" description">
                                 <div>
                                     <form class = form-class method="POST" action="history" >
+                                        <div class = "first-form">
+                                            <label>Data of History:</label>
+                                            <input type="date" name="historyDate" placeholder="date">
+                                        </div>
                                         <div class="second-form">
                                             <label>Description history:</label>
                                             <input type="hidden" name="id" value="<?=$car -> getId();?>">
