@@ -108,17 +108,15 @@
                                             <button class="second-button-form" type="submit">Add</button>
                                         </div>
                                     </form>
-                                    <h1>Car History</h1>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
-                                    <p>20.04.2010</p>
-                                    <p>dsadasdsdsadsaddsas</p>
+                                    <div>
+                                        <h1>Car History</h1>
+                                        <?php foreach ($car->getHistory() as $history):?>
+                                            <div>
+                                                <p style="font-weight: bold"><?=$history->getHistoryDate();?></p>
+                                                <p><?=$history->getDescriptionHistory();?></p>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
                                 </div>
                             </div>
                             

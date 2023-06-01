@@ -22,26 +22,9 @@ class HistoryController extends AppController
     public function history()
     {
         if ($this->isPost()) {
-
-            $idCar = $_POST["id"];
-//            #dateHistory = $_POST["historyDate"];
-            $descriptionHistory = $_POST["descriptionHistory"];
-           $history= new History($_POST['descriptionHistory'],$_POST["historyDate"]); /// sprawdzamy czy dodawanie działa.
-            //dodawanie projektu, tak jak userów do zmiany
+            $history= new History($_POST['descriptionHistory'], $_POST["historyDate"], $_POST["id"]);
             $this->historyRepository->addHistory($history);
-
-
-            $cars = $this->carRepository->getCars();
-            $this->render('history',['cars'=>$cars]);
-
-            return $this->render('history', ["messages" => $this->messages, "history" =>$history]);
-
-
+            header('Location: /history');
         }
-
-        return $this->render('history', ["messages" => $this->messages ]);
-
     }
-
-
 }

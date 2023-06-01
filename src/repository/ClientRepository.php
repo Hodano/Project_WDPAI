@@ -37,7 +37,7 @@ class ClientRepository extends Repository
         VALUES (?,?,?,?,?)
         ');
 
-        $assignedById = 3; //Musi byc user z takim idikiem(chyba można wyjebac)
+        $assignedById = 14; //Musi byc user z takim idikiem(chyba można wyjebac)
 
         $stmt->execute([
            $client->getNameAndSurname(),

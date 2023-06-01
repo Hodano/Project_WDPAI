@@ -23,7 +23,7 @@ Routing::post('calendar', "CalendarController");
 Routing::post('history', "HistoryController");
 Routing::post('registerPost', "SecurityController");
 Routing::post('search',"ClientController" );
-Routing::post('searchCar',"HistoryController" ); //proba moze zrobie FetchAPI
+
 
 
 Routing::run($path);

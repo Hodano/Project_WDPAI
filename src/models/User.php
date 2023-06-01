@@ -14,9 +14,10 @@ class User
 
     private $phone;
     private $address;
+    private $role;
 
 
-    public function __construct(string $email, string $password, string $name, string $surname, string $phone, string $address)
+    public function __construct(string $email, string $password, string $name, string $surname, string $phone, string $address,string $role = ' ')
     {
         $this->email = $email;
         $this->password = $password;
@@ -24,7 +25,21 @@ class User
         $this->surname = $surname;
         $this->phone = $phone;
         $this->address=$address;
+        $this->role=$role;
     }
+
+
+    public function getRole(): string
+    {
+        return $this->role;
+    }
+
+
+    public function setRole(string $role): void
+    {
+        $this->role = $role;
+    }
+
 
 
     public function getPhone()

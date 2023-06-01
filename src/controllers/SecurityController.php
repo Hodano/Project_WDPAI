@@ -36,7 +36,9 @@ class SecurityController extends AppController{
             return $this->render('login', ['messages' => ['User with this email not exist!']]);
         }
 
-        if ($user->getPassword() !== $password) {
+        $hashedPassword = md5($password);
+
+        if ($user->getPassword() !== $hashedPassword) {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
 
@@ -61,9 +63,11 @@ class SecurityController extends AppController{
         $address = $_POST['address'];
 
 
+
         if ($password !== $confirmedPassword) {
             return $this->render('register', ['messages' => ['Please provide proper password']]);
         }
+
 
         $user = new User($email, md5($password), $name, $surname,$phone,$address);
 

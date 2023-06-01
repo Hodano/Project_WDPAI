@@ -9,18 +9,16 @@ class Car
     private $carMileage;
     private $color;
     private $history;
-    /// dodanie historii ale to później
 
-    public function __construct($carModel, $bodyType, $yearOfProduction, $carMileage, $color)
+    public function __construct( $carModel, $bodyType, $yearOfProduction, $carMileage, $color,$id=0)
     {
-        //TODO: Pobierać ID
-        $this->id = 1;
+
         $this->carModel = $carModel;
         $this->bodyType = $bodyType;
         $this->yearOfProduction = $yearOfProduction;
         $this->carMileage = $carMileage;
         $this->color = $color;
-
+        $this->id = $id;
     }
 
     public function getId(): int
@@ -90,6 +88,13 @@ class Car
         $this->color = $color;
     }
 
+    public function getHistory(): array
+    {
+        return $this->history;
+    }
 
-
+    public function setHistory(array $history): void
+    {
+        $this->history = $history;
+    }
 }

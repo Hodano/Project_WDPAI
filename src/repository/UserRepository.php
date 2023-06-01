@@ -39,9 +39,10 @@ class UserRepository extends Repository
             $user->getPhone(),
             $user->getAddress()
         ]);
+        $userRole = $this->isFirstUser() ? 'admin' : 'user'; // Sprawdzamy, czy to jest pierwszy dodawany użytkownik
 
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO users (email, password, id_user_details,id_role)
+            INSERT INTO users (email, password, id_user_details,role)
             VALUES (?, ?, ?,?)
         ');
 
@@ -49,36 +50,36 @@ class UserRepository extends Repository
             $user->getEmail(),
             $user->getPassword(),
             $this->getUserDetailsId($user),
-            1
+            $userRole
         ]);
     }
-    public function addAdmin(User $user)
-    {
-
-        $stmt = $this->database->connect()->prepare('
-        INSERT INTO user_details (name, surname, phone, address)
-        VALUES (?, ?, ?, ?)
-    ');
-
-        $stmt->execute([
-            $user->getName(),
-            $user->getSurname(),
-            $user->getPhone(),
-            $user->getAddress()
-        ]);
-
-        $stmt = $this->database->connect()->prepare('
-        INSERT INTO users (email, password, id_user_details, id_role)
-        VALUES (?, ?, ?, ?)
-    ');
-
-        $stmt->execute([
-            $user->getEmail(),
-            $user->getPassword(),
-            $this->getUserDetailsId($user),
-            2 // ID roli administratora
-        ]);
-    }
+//    public function addAdmin(User $user)
+//    {
+//
+//        $stmt = $this->database->connect()->prepare('
+//        INSERT INTO user_details (name, surname, phone, address)
+//        VALUES (?, ?, ?, ?)
+//    ');
+//
+//        $stmt->execute([
+//            $user->getName(),
+//            $user->getSurname(),
+//            $user->getPhone(),
+//            $user->getAddress()
+//        ]);
+//
+//        $stmt = $this->database->connect()->prepare('
+//        INSERT INTO users (email, password, id_user_details,role)
+//        VALUES (?, ?, ?, ?)
+//    ');
+//
+//        $stmt->execute([
+//            $user->getEmail(),
+//            $user->getPassword(),
+//            $this->getUserDetailsId($user),
+//            x // ID roli administratora
+//        ]);
+//    }
 
 
 
@@ -108,6 +109,18 @@ class UserRepository extends Repository
 
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
         return $data['id'];
+    }
+
+    private function isFirstUser(): bool
+    {
+        $stmt = $this->database->connect()->prepare('
+        SELECT COUNT(*) AS user_count FROM users
+    ');
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $userCount = intval($result['user_count']);
+        return $userCount === 0; // Sprawdzamy, czy tabela users jest pusta
     }
 
 
