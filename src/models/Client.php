@@ -9,14 +9,14 @@ class Client
     private $id;
     private $cars; //Lista samochodów
 
-    public function __construct($nameAndSurname, $address, $phoneNumber, $email, $cars = [],$id = 0)
+    public function __construct($nameAndSurname, $address, $phoneNumber, $email,$id = 0)
     {
         $this->id = $id;
         $this->nameAndSurname = $nameAndSurname;
         $this->address = $address;
         $this->phoneNumber = $phoneNumber;
         $this->email = $email;
-        $this->cars = $cars; /// zmienić na new Car;
+
     }
 
 

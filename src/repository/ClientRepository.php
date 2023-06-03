@@ -1,5 +1,6 @@
 <?php
 require_once "Repository.php";
+require_once "CarRepository.php";
 require_once __DIR__.'/../models/Client.php';
 class ClientRepository extends Repository
 {
@@ -20,13 +21,19 @@ class ClientRepository extends Repository
         $stmt->execute();
         $clients = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+        $carRepository = CarRepository::getInstance();
+
         foreach ($clients as $client ){
-            $clientsArray[] = new Client(
+            $cars = $carRepository->getCarByClientId($client['id']);
+            $newClient = new Client(
                 $client['name'],
                 $client['address'],
                 $client['phone_number'],
-                $client['email']
+                $client['email'],
+                $client['id']
             );
+            $newClient->setCars($cars);
+            $clientsArray[] = $newClient;
         }
         return $clientsArray;
     }

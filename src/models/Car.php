@@ -3,6 +3,7 @@
 class Car
 {
     private $id;
+    private $clientId;
     private $carModel;
     private $bodyType;
     private $yearOfProduction;
@@ -11,7 +12,7 @@ class Car
     private $history;
     private $owner;
 
-    public function __construct( $carModel, $bodyType, $yearOfProduction, $carMileage, $color,$id=0)
+    public function __construct( $carModel, $bodyType, $yearOfProduction, $carMileage, $color,$id=0,$clientId = 0)
     {
 
         $this->carModel = $carModel;
@@ -20,7 +21,21 @@ class Car
         $this->carMileage = $carMileage;
         $this->color = $color;
         $this->id = $id;
+        $this->clientId = $clientId;
     }
+
+
+    public function getClientId():int
+    {
+        return $this->clientId;
+    }
+
+
+    public function setClientId(int $clientId): void
+    {
+        $this->clientId = $clientId;
+    }
+
 
     public function getId(): int
     {

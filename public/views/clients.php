@@ -92,11 +92,18 @@
                                 <p class="phoneNumber"><?=$client ->getPhoneNumber()?></p>
                                 <h4>Email</h4>
                                 <p class="email"><?=$client ->getEmail();?></p>
+                                <input type="hidden" name="id" value="<?=$client -> getId();?>">
                                 <h4>Cars</h4>
-                                <p>Prawdopodobnie do wyjebania</p>
-                                <h4>
-                                    <a href="addCar"> add car</a>
+                                <?php
+                                foreach ($client->getCars() as $car):?>
+                                <div style="border: 1px solid red;">
+                                    <p style="font-weight: bold"><?=$car ->getCarModel();?></p></p>
+                                    <p style="font-weight: bold"><?=$car ->getBodyType();?></p></p>
+                                </div>
 
+                                <?php endforeach; ?>
+                                <h4>
+                                    <a href="addCar?clientId=<?=$client->getId();?>"</p>> add car</a>
                                 </h4>
                             </div>
                         </div>

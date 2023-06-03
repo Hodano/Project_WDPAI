@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="public/css/style-add-client.css">
@@ -19,6 +22,7 @@
                         }
                     }
                     ?>
+
                     <div class = "first-form">
                         <label>Name and Surname:</label>
                          <input type="text" name="nameAndSurname" placeholder="name_and_surname">
@@ -35,13 +39,6 @@
                         <label>Email:</label>
                          <input type="email" name="email" placeholder="email">
                     </div>
-                    <div class = "first-form">
-                        <label>Cars:</label>
-                        <input type= "text" name="cars" placeholder="cars">    
-                    </div>
-
-            
-                        
                 </form>
             </div>
             <div class="come-back-client-button">

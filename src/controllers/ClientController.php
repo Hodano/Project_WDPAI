@@ -3,37 +3,34 @@
 require_once 'AppController.php';
 require_once __DIR__.'/../models/Client.php';
 require_once __DIR__.'/../repository/ClientRepository.php';
+require_once __DIR__.'/../repository/CarRepository.php';
 class ClientController extends AppController
 {
 
     private $messages = [];
     private $clientRepository;
+    private $carsRepository;
 
     public function __construct()
     {
         parent::__construct();
         $this->clientRepository = ClientRepository::getInstance();
+        $this->carsRepository = CarRepository::getInstance();
     }
 
 
     public function addClientPost()
     {
-
         if ($this->isPost()) {
-
-            $client = new Client($_POST['nameAndSurname'],$_POST['address'],$_POST['phoneNumber'],$_POST['email'],$_POST['cars']); /// sprawdzamy czy dodawanie działa.
-            //dodawanie projektu, tak jak userów do zmiany
+            $client = new Client($_POST['nameAndSurname'],$_POST['address'],$_POST['phoneNumber'],$_POST['email']);
             $this->clientRepository->addClient($client);
             return $this->render('clients', [
                 'clients' => $this->clientRepository->getClients(),
-                "messages" => $this->messages]);
-            ///Raczej ten return do wyjebania bo tam dodaje
-
-
+                "messages" => $this->messages
+            ]);
         }
 
-        return $this->render('addClient', ["messages" => $this->messages ]);
-
+        return $this->render('addClient', ["messages" => $this->messages]);
     }
 
     public function addClient()
@@ -41,9 +38,9 @@ class ClientController extends AppController
         return $this->render('addClient', ["messages" => $this->messages ]);
     }
 
-    public function clients() { /// views all data
+    public function clients() {
         $clients = $this->clientRepository->getClients();
-        $this->render('clients',['clients' => $clients]);
+        return $this->render('clients',['clients' => $clients]);
     }
 //    ///Jakby było trzeba.
 //    public function getClientByName(){

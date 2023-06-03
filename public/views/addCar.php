@@ -20,6 +20,13 @@
                     }
                     ?>
 
+                    <?php
+                        if(isset($_GET["clientId"]))
+                        {
+                            echo "<input type='hidden' name='clientId' value='".$_GET["clientId"]."'>";
+                        }
+                    ?>
+
                     <div class = "first-form">
                         <label>Car model:</label>
                          <input type="text" name="carModel" placeholder="car_model">
