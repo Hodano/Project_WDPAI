@@ -60,11 +60,7 @@
                             <i class="fa-solid fa-plus"></i>
                             add client</a>
                     </div>
-                    <div class="search-client">
-                        <form class="form-class1">
-                            <input class="search-class" placeholder="search client">
-                        </form>
-                    </div>
+
                 </header>
                 <section class="client-section">
                     <div class ="add-service">

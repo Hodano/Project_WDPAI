@@ -94,5 +94,26 @@ class SecurityController extends AppController{
         exit();
 
     }
+    public function deleteUserByEmail()
+    {
+
+
+        if (!$this->isPost() || !isset($_POST['email'])) {
+            return $this->render('delete_user');
+        }
+
+        $email = $_POST['email'];
+
+        // Wywołaj funkcję usuwającą użytkownika z repozytorium
+        try {
+            $this->userRepository->deleteUserByEmail($email);
+        } catch (Exception $e) {
+            return $this->render('delete_user', ['messages' => ['User not found']]);
+        }
+
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/clients");
+        exit();
+    }
 
 }

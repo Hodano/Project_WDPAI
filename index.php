@@ -16,6 +16,8 @@ Routing::get('addCar', "CarController");
 Routing::get('register', "SecurityController");
 
 
+
+
 Routing::post('login', "SecurityController");
 Routing::post('addClientPost', "ClientController");
 Routing::post('addCarPost', "CarController");
@@ -24,6 +26,7 @@ Routing::post('calendar', "CalendarController");
 Routing::post('history', "HistoryController");
 Routing::post('registerPost', "SecurityController");
 Routing::post('search',"ClientController" );
+Routing::post('deleteUserByEmail', "SecurityController");
 
 
 

@@ -57,43 +57,13 @@ class UserRepository extends Repository
     }
 
 
-//    public function addAdmin(User $user)
-//    {
-//
-//        $stmt = $this->database->connect()->prepare('
-//        INSERT INTO user_details (name, surname, phone, address)
-//        VALUES (?, ?, ?, ?)
-//    ');
-//
-//        $stmt->execute([
-//            $user->getName(),
-//            $user->getSurname(),
-//            $user->getPhone(),
-//            $user->getAddress()
-//        ]);
-//
-//        $stmt = $this->database->connect()->prepare('
-//        INSERT INTO users (email, password, id_user_details,role)
-//        VALUES (?, ?, ?, ?)
-//    ');
-//
-//        $stmt->execute([
-//            $user->getEmail(),
-//            $user->getPassword(),
-//            $this->getUserDetailsId($user),
-//            x // ID roli administratora
-//        ]);
-//    }
 
 
 
-
-
-
-    public function deleteUser($userId)
+    public function deleteUserByEmail($email)
     {
-        $stmt = $this->database->connect()->prepare('DELETE FROM users WHERE id = :id');
-        $stmt->bindParam(':id', $userId, PDO::PARAM_INT);
+        $stmt = $this->database->connect()->prepare("DELETE FROM users WHERE email = :email");
+        $stmt->bindParam(':email', $email);
         $stmt->execute();
     }
 

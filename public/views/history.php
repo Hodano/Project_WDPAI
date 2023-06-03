@@ -60,28 +60,10 @@
                             <i class="fa-solid fa-plus"></i>
                             add client</a>
                     </div>
-                    <div class="search-client">
-                        <form class="form-class1">
-                            <input class="search-class" placeholder="search car">
-                        </form>
-                    </div>
+
                 </header>
                 <section class="client-section">
-                    <div class ="add-car">
-                            <div class = "form-car-hidden" class = "form-car" id ="formCar">
-	                            <form class = form-class id = "navFormCar" method="POST" action="history" >
-		                            <div class = "second-form">
-                                        <label>Description history:</label>
-		                                <input type="text" name="descriptionHistory">
-                                        <button class="second-button-form" type="submit">Add</button>
-		                                
-                                    </div>
 
-		                
-		                            
-	                            </form>
-                            </div>
-                    </div>
                     <?php foreach ($cars as $car):?>
                     <div class = "display-car">
                         <div class="cars" >
@@ -105,7 +87,7 @@
                                 <h1>Color:</h1>
                                 <p><?=$car ->getColor();?></p>
                                 <h1>Car history</h1>
-                                <div class="nav-car" id="navCar"><h1>Add</h1></div>
+
                             </div>
 
                             <div class=" description">

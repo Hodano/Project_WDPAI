@@ -60,7 +60,7 @@
                 </div>
                 <div class="search-client">
                     <form class="form-class1">
-                        <input class="search-class" placeholder="search client">
+
                     </form>
                 </div>
             </header>
@@ -88,11 +88,11 @@
                     <?php foreach ($calendar as $term):?>
                     <div class="terms" >
                         <div class = "each-term">
-                            <h1>Your Data:</h1>
+                            <h1>Event:</h1>
                             <p><?=$term ->getEvent();?></p>
                         </div>
                         <div class="each-price" >
-                            <h1>Event:</h1>
+                            <h1>Your Data:</h1>
                             <p><?=$term ->getDateEvent();?></p>
                         </div>
                     </div>

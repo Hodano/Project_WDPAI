@@ -12,7 +12,6 @@
     <div class="all-container">
         <div class="client-container">
             <nav>
-                 <!-- <a class="menu-small-window" href = "#">MENU      ^ </a> -->
                 <div class="nav-title" id="navTitle">
                     <p class = "menu-icons-style"><i class="fa-solid fa-bars"></i></p>
                 </div>
@@ -49,6 +48,16 @@
                             }
                             ?>
                         </p>
+                    </li>
+                    <li>
+                        <?php if (isset($_SESSION['user']) && $_SESSION['user']->getRole() === 'admin'): ?>
+                            <form method="POST" action="/deleteUserByEmail">
+                                <input type="email" name="email">
+
+                                <button type="submit" class="delete-button">Delete User</button>
+                            </form>
+                        <?php endif; ?>
+
                     </li>
                 </ul>
 
