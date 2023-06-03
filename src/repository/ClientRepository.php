@@ -36,18 +36,17 @@ class ClientRepository extends Repository
 
     public function addClient(Client $client):void{
         $date = new DateTime();
-        $stmt = $this ->database->connect()->prepare('INSERT INTO clients(name,address,phone_number,email,id_assigned_by)
-        VALUES (?,?,?,?,?)
+        $stmt = $this ->database->connect()->prepare('INSERT INTO clients(name,address,phone_number,email)
+        VALUES (?,?,?,?)
         ');
 
-        $assignedById = 14; //Musi byc user z takim idikiem(chyba można wyjebac)
+
 
         $stmt->execute([
            $client->getNameAndSurname(),
             $client->getAddress(),
             $client->getPhoneNumber(),
             $client->getEmail(),
-            $assignedById
         ]);
 
     }

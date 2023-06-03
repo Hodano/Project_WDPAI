@@ -35,7 +35,7 @@
                     </li>
                     <li>
                         <i class="fa-solid fa-gear"></i>
-                        <a href="/logout" class="client-menu">Log out</a>
+                        <a href="/logout" class="client-menu">Log Out</a>
                     </li>
                     <li>
                         <p>
@@ -57,7 +57,7 @@
             <main class="main">
                 <header class = "header">
                     <div class="add-client">
-                         <a href="addClient.php">
+                         <a href="addClient">
                             <i class="fa-solid fa-plus"></i>
                             add client</a>
                     </div>

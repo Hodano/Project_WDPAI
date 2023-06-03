@@ -5,7 +5,7 @@ $path = trim($_SERVER['REQUEST_URI'], '/');
 $path = parse_url($path, PHP_URL_PATH);
 
 Routing::get('', "DefaultController");
-Routing::post('logout', "SecurityController@logout");
+Routing::get('logout', "SecurityController");
 Routing::get('history', "HistoryController");
 Routing::get('history', "CarController");
 Routing::get('calendar', "CalendarController");

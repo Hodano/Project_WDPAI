@@ -84,11 +84,15 @@ class SecurityController extends AppController{
     public function logout()
     {
         session_start();
+        setcookie(session_name(), '', 100);
+        session_unset();
         session_destroy();
+        $_SESSION = array();
 
         $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/login");
+        header("Location: {$url}/");
         exit();
+
     }
 
 }
