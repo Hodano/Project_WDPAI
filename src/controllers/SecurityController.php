@@ -13,7 +13,7 @@ class SecurityController extends AppController{
     }
 
     public function login(){
-
+        session_start();
 
 //        $user = new User('mariusz@pk.edu.pl','Janek','Adam','Bialy');//niby User w bazie danych./ w orginale jest bez !
 
@@ -30,7 +30,7 @@ class SecurityController extends AppController{
         } catch (Exception $e){
             return $this->render('login', ['messages' => ['User no exist!']]);
         }
-        
+
 
         if ($user->getEmail() !== $email) {
             return $this->render('login', ['messages' => ['User with this email not exist!']]);
@@ -41,6 +41,9 @@ class SecurityController extends AppController{
         if ($user->getPassword() !== $hashedPassword) {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
+
+
+        $_SESSION['user'] = $user;
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/clients");
@@ -68,8 +71,8 @@ class SecurityController extends AppController{
             return $this->render('register', ['messages' => ['Please provide proper password']]);
         }
 
-
-        $user = new User($email, md5($password), $name, $surname,$phone,$address);
+        $hashedPassword = md5($password);
+        $user = new User($email, $hashedPassword, $name, $surname,$phone,$address);
 
         $this->userRepository->addUser($user);
 
@@ -77,6 +80,15 @@ class SecurityController extends AppController{
     }
     public function register(){
         return $this->render('register');
+    }
+    public function logout()
+    {
+        session_start();
+        session_destroy();
+
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/login");
+        exit();
     }
 
 }

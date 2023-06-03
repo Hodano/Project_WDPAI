@@ -18,7 +18,6 @@ class CarController extends AppController
     {
         if ($this->isPost()) {
 
-
 //             /// sprawdzamy czy dodawanie działa.
             $car = new Car($_POST['carModel'],$_POST['bodyType'],$_POST['yearProduction'],$_POST['carMileage'],$_POST['color']);
             //dodawanie projektu, tak jak userów do zmiany

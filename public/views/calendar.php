@@ -17,23 +17,36 @@
             <ul id="navUl" class="nav-ul-hidden">
                 <li>
                     <i class="fa-solid fa-user"></i>
-                    <a href="clients.php" class="client-menu">Client</a>
+                    <a href="clients" class="client-menu">Client</a>
                 </li>
                 <li>
                     <i class="fa-solid fa-calendar-days"></i>
-                    <a href="calender.html" class="client-menu">Calender</a>
+                    <a href="calendar" class="client-menu">Calender</a>
                 </li>
                 <li>
                     <i class="fa-solid fa-clock-rotate-left"></i>
-                    <a href="/history" class="client-menu">History</a>
+                    <a href="history" class="client-menu">History</a>
                 </li>
                 <li>
                     <i class="fa-solid fa-sack-dollar"></i>
-                    <a href="price-list" class="client-menu">Price list</a>
+                    <a href="priceList" class="client-menu">Price list</a>
                 </li>
                 <li>
                     <i class="fa-solid fa-gear"></i>
-                    <a href="/index" class="client-menu">Log out</a>
+                    <a href="/logout" class="client-menu">Log out</a>
+                </li>
+                <li>
+                    <p>
+                        <?php
+                        session_start();
+                        if (isset($_SESSION['user'])) {
+                            $user = $_SESSION['user'];
+                            echo "Logged: {$user->getName()} {$user->getSurname()} <br>";
+
+                            echo "{$user->getRole()}";
+                        }
+                        ?>
+                    </p>
                 </li>
             </ul>
 

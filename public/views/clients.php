@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="public/css/style-client.css">
@@ -18,23 +19,36 @@
                 <ul id="navUl" class="nav-ul-hidden">
                     <li>
                         <i class="fa-solid fa-user"></i>
-                        <a href="clients.html" class="client-menu">Client</a>
+                        <a href="clients" class="client-menu">Client</a>
                     </li>
                     <li>
                         <i class="fa-solid fa-calendar-days"></i>
-                        <a href="calender.html" class="client-menu">Calender</a>
+                        <a href="calendar" class="client-menu">Calender</a>
                     </li>
                     <li>
                         <i class="fa-solid fa-clock-rotate-left"></i>
-                        <a href="history.php" class="client-menu">History</a>
+                        <a href="history" class="client-menu">History</a>
                     </li>
                     <li>
                         <i class="fa-solid fa-sack-dollar"></i>
-                        <a href="priceList.php" class="client-menu">Price list</a>
+                        <a href="priceList" class="client-menu">Price list</a>
                     </li>
                     <li>
                         <i class="fa-solid fa-gear"></i>
-                        <a href="login.php" class="client-menu">Log out</a>
+                        <a href="/logout" class="client-menu">Log out</a>
+                    </li>
+                    <li>
+                        <p>
+                            <?php
+                            session_start();
+                            if (isset($_SESSION['user'])) {
+                                $user = $_SESSION['user'];
+                                echo "Logged: {$user->getName()} {$user->getSurname()} <br>";
+
+                                echo "{$user->getRole()}";
+                            }
+                            ?>
+                        </p>
                     </li>
                 </ul>
 
@@ -72,7 +86,7 @@
                                 <h4>Cars</h4>
                                 <p>Prawdopodobnie do wyjebania</p>
                                 <h4>
-                                    <a href="addCar.php"> add car</a>
+                                    <a href="addCar"> add car</a>
 
                                 </h4>
                             </div>

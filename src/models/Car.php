@@ -9,6 +9,7 @@ class Car
     private $carMileage;
     private $color;
     private $history;
+    private $owner;
 
     public function __construct( $carModel, $bodyType, $yearOfProduction, $carMileage, $color,$id=0)
     {
@@ -97,4 +98,17 @@ class Car
     {
         $this->history = $history;
     }
+
+
+    public function getOwner():?Client
+    {
+        return $this->owner;
+    }
+
+
+    public function setOwner(?Client $owner): void
+    {
+        $this->owner = $owner;
+    }
+
 }

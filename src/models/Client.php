@@ -6,15 +6,44 @@ class Client
     private $address;
     private $phoneNumber;
     private $email;
+    private $id;
     private $cars; //Lista samochodów
 
-    public function __construct($nameAndSurname, $address, $phoneNumber, $email, $cars = " ")
+    public function __construct($nameAndSurname, $address, $phoneNumber, $email, $cars = [],$id = 0)
     {
+        $this->id = $id;
         $this->nameAndSurname = $nameAndSurname;
         $this->address = $address;
         $this->phoneNumber = $phoneNumber;
         $this->email = $email;
         $this->cars = $cars; /// zmienić na new Car;
+    }
+
+
+    public function getId():int
+    {
+        return $this->id;
+    }
+
+
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    public function getCars(): array
+    {
+        return $this->cars;
+    }
+
+    public function setCars(array $cars): void
+    {
+        $this->cars = $cars;
+    }
+
+    public function addCar(Car $car): void
+    {
+        $this->cars[] = $car;
     }
 
     public function getNameAndSurname():string
@@ -61,16 +90,6 @@ class Client
         $this->email = $email;
     }
 
-    public function getCars():string
-    {                                           //zmien na array bo każdy moze miec wiecej samochodów.
-        return $this->cars;
-    }
-
-
-    public function setCars(string $cars): void
-    {
-        $this->cars = $cars;
-    }
 
 
 

@@ -24,8 +24,10 @@ class UserRepository extends Repository
             $user['surname'],
             $user['phone'],
             $user['address'],
+            $user['role']
         );
     }
+
     public function addUser(User $user)
     {
         $stmt = $this->database->connect()->prepare('
@@ -53,6 +55,8 @@ class UserRepository extends Repository
             $userRole
         ]);
     }
+
+
 //    public function addAdmin(User $user)
 //    {
 //
@@ -86,7 +90,12 @@ class UserRepository extends Repository
 
 
 
-
+    public function deleteUser($userId)
+    {
+        $stmt = $this->database->connect()->prepare('DELETE FROM users WHERE id = :id');
+        $stmt->bindParam(':id', $userId, PDO::PARAM_INT);
+        $stmt->execute();
+    }
 
 
     public function getUserDetailsId(User $user): int

@@ -17,7 +17,7 @@ class User
     private $role;
 
 
-    public function __construct(string $email, string $password, string $name, string $surname, string $phone, string $address,string $role = ' ')
+    public function __construct(string $email, string $password, string $name, string $surname, string $phone, string $address,string $role = 'xd')
     {
         $this->email = $email;
         $this->password = $password;

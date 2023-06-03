@@ -31,6 +31,9 @@ class ClientRepository extends Repository
         return $clientsArray;
     }
 
+
+
+
     public function addClient(Client $client):void{
         $date = new DateTime();
         $stmt = $this ->database->connect()->prepare('INSERT INTO clients(name,address,phone_number,email,id_assigned_by)
