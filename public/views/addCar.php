@@ -44,8 +44,8 @@
                          <input type="number" name="carMileage" placeholder="car_mileage">
                     </div>
                     <div class = "first-form">
-                        <label>Color:</label>
-                         <input type="text" name="color" placeholder="color">
+                        <label>Number VIN:</label>
+                         <input type="text" name="color" placeholder="number_vin">
                     </div>
 <!--                    <div class = "first-form">-->
 <!--                        <label>Client name:</label>-->

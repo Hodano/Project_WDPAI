@@ -1,6 +1,7 @@
 <?php
 require_once "Repository.php";
 require_once __DIR__.'/../models/History.php';
+require_once __DIR__.'/../models/Client.php';
 
 class HistoryRepository extends Repository
 {
@@ -36,6 +37,23 @@ class HistoryRepository extends Repository
             );
         }
         return $historyArray;
+    }
+    public function getClientByCarId(int $carId): array {
+        $clientArray = [];
+        $stmt = $this->database->connect()->prepare('SELECT clients.name, clients.address, clients.phone_number, clients.email FROM cars JOIN clients ON cars.client_id = clients.id WHERE cars.id = :car_id');
+        $stmt->bindParam(":car_id", $carId);
+        $stmt->execute();
+        $clients = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($clients as $oneClient) {
+            $clientArray[] = [
+                'name' => $oneClient['name'],
+                'address' => $oneClient['address'],
+                'phone_number' => $oneClient['phone_number'],
+                'email' => $oneClient['email']
+            ];
+        }
+        return $clientArray;
     }
 
     public function addHistory(History $history):void{

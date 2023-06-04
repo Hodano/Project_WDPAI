@@ -93,6 +93,7 @@
                         </div>
                         <div class="each-price" >
                             <h1>Your Data:</h1>
+                            <br>
                             <p><?=$term ->getDateEvent();?></p>
                         </div>
                     </div>

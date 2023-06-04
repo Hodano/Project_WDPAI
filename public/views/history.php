@@ -77,15 +77,17 @@
                                 <h1>Productions:</h1>
                                 <p><?=$car ->getYearOfProduction();?></p>
                                 <h1>Client data</h1>
-                                <p>Zobaczymy jeszcze, albo wypad albo nie wiem</p>
+<!--                                <p>--><?php //=$car->getClientName();?><!--</p>-->
+                                <p><?php echo $car->getClientName() ?></p>
+
 
 
                             </div>
                             <div class="each-car">
                                 <h1>Car mileage:</h1>
                                 <p><?=$car ->getCarMileage();?></p>
-                                <h1>Color:</h1>
-                                <p><?=$car ->getColor();?></p>
+                                <h1>Number VIN:</h1>
+                                <p><?=$car ->getNumberVIN();?></p>
                                 <h1>Car history</h1>
 
                             </div>

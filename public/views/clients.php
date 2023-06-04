@@ -96,14 +96,16 @@
                                 <h4>Cars</h4>
                                 <?php
                                 foreach ($client->getCars() as $car):?>
-                                <div style="border: 1px solid red;">
-                                    <p style="font-weight: bold"><?=$car ->getCarModel();?></p></p>
-                                    <p style="font-weight: bold"><?=$car ->getBodyType();?></p></p>
+                                <div style="border: 1px solid #775B5B; border-radius: 10%;">
+                                    <p style="font-weight: bold; text-align: center"><?=$car ->getCarModel();?></p>
+                                    <p style = "font-size: 8px; text-align: center;">Number VIN</p>
+                                    <p style="font-weight: bold; text-align: center"><?=$car ->getNumberVIN();?></p>
+
                                 </div>
 
                                 <?php endforeach; ?>
                                 <h4>
-                                    <a href="addCar?clientId=<?=$client->getId();?>"</p>> add car</a>
+                                    <a href="addCar?clientId=<?=$client->getId();?>"</p> add car</a>
                                 </h4>
                             </div>
                         </div>

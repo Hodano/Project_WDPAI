@@ -13,7 +13,8 @@ class CarRepository extends Repository
 
         $historyRepository = HistoryRepository::getInstance();
 
-        foreach ($cars as $car){
+        foreach ($cars as $car) {
+            $name = $historyRepository->getClientByCarId($car['id']);
             $history = $historyRepository->getHistoryByCarId($car['id']);
             $newCar = new Car(
                 $car['car_model'],
@@ -25,9 +26,12 @@ class CarRepository extends Repository
                 $car['client_id']
             );
             $newCar->setHistory($history);
+            $newCar->setClientName(!empty($name) ? $name[0]['name'] : 'xd'); // Sprawdź czy tablica $name jest pusta
 
             $carsArray[] = $newCar;
         }
+
+
         return $carsArray;
     }
     public function getCarByClientId(int $clientId):array{
@@ -51,6 +55,8 @@ class CarRepository extends Repository
         return $carsArray;
     }
 
+
+
     public function addCar(Car $car):void{
         $stmt = $this ->database->connect()->prepare('INSERT INTO cars(car_model, body_type, year_of_production, car_mileage, color, client_id) VALUES (?,?,?,?,?,?)');
 
@@ -59,7 +65,7 @@ class CarRepository extends Repository
             $car->getBodyType(),
             $car->getYearOfProduction(),
             $car->getCarMileage(),
-            $car->getColor(),
+            $car->getNumberVIN(),
             $car->getClientId()
         ]);
 

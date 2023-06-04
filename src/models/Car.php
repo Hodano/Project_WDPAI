@@ -8,18 +8,18 @@ class Car
     private $bodyType;
     private $yearOfProduction;
     private $carMileage;
-    private $color;
+    private $numberVIN;
     private $history;
-    private $owner;
+    private $clientName;
 
-    public function __construct( $carModel, $bodyType, $yearOfProduction, $carMileage, $color,$id=0,$clientId = 0)
+    public function __construct( $carModel, $bodyType, $yearOfProduction, $carMileage, $numberVIN,$id=0,$clientId = 0)
     {
 
         $this->carModel = $carModel;
         $this->bodyType = $bodyType;
         $this->yearOfProduction = $yearOfProduction;
         $this->carMileage = $carMileage;
-        $this->color = $color;
+        $this->numberVIN = $numberVIN;
         $this->id = $id;
         $this->clientId = $clientId;
     }
@@ -94,14 +94,14 @@ class Car
     }
 
 
-    public function getColor():string
+    public function getNumberVIN():string
     {
-        return $this->color;
+        return $this->numberVIN;
     }
 
-    public function setColor(string $color): void
+    public function setColor(string $numberVIN): void
     {
-        $this->color = $color;
+        $this->numberVIN = $numberVIN;
     }
 
     public function getHistory(): array
@@ -115,15 +115,15 @@ class Car
     }
 
 
-    public function getOwner():?Client
+    public function getClientName():string
     {
-        return $this->owner;
+        return $this->clientName;
     }
 
 
-    public function setOwner(?Client $owner): void
+    public function setClientName(string $clientName): void
     {
-        $this->owner = $owner;
+        $this->clientName = $clientName;
     }
 
 }
