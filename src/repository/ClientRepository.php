@@ -21,7 +21,7 @@ class ClientRepository extends Repository
         $stmt->execute();
         $clients = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $carRepository = CarRepository::getInstance();
+        $carRepository = new CarRepository();
 
         foreach ($clients as $client ){
             $cars = $carRepository->getCarByClientId($client['id']);

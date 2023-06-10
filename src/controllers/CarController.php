@@ -9,13 +9,11 @@ class CarController extends AppController
 
     private $messages = [];
     private $carRepository;
-    private $clientRepository;
 
     public function __construct()
     {
         parent::__construct();
-        $this->carRepository = CarRepository::getInstance();
-        $this->clientRepository = ClientRepository::getInstance();
+        $this->carRepository = new CarRepository();
     }
     public function addCarPost()
     {
@@ -38,10 +36,8 @@ class CarController extends AppController
         return $this->render('addCar',["messages" =>$this->messages]);
     }
 
-    public function history() {
-        $cars = $this->carRepository->getCars();
-        $this->render('history',['cars'=>$cars]);
-    }
+
+
 
 
 }

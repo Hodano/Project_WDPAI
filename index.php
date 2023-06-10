@@ -7,7 +7,6 @@ $path = parse_url($path, PHP_URL_PATH);
 Routing::get('', "DefaultController");
 Routing::get('logout', "SecurityController");
 Routing::get('history', "HistoryController");
-Routing::get('history', "CarController");
 Routing::get('calendar', "CalendarController");
 Routing::get('priceList', "PriceListController");
 Routing::get('clients', "ClientController");

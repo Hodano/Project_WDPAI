@@ -10,7 +10,7 @@ class CalendarController extends AppController
     public function __construct()
     {
         parent::__construct();
-        $this->calendarRepository = CalendarRepository::getInstance();
+        $this->calendarRepository = new CalendarRepository();
     }
 
     public function calendar()

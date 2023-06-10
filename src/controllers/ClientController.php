@@ -9,13 +9,12 @@ class ClientController extends AppController
 
     private $messages = [];
     private $clientRepository;
-    private $carsRepository;
+
 
     public function __construct()
     {
         parent::__construct();
-        $this->clientRepository = ClientRepository::getInstance();
-        $this->carsRepository = CarRepository::getInstance();
+        $this->clientRepository = new ClientRepository();
     }
 
 
@@ -42,23 +41,7 @@ class ClientController extends AppController
         $clients = $this->clientRepository->getClients();
         return $this->render('clients',['clients' => $clients]);
     }
-//    ///Jakby było trzeba.
-//    public function getClientByName(){
-//        $clientRepository = ClientRepository::getInstance();
-//
-//        if(!$this->isPost()){
-//            $this->render('clients');
-//        }
-//        $name = $_POST['nameAndSurname'];
-//
-//        try {
-//            $client = $clientRepository->getClient($name);
-//        } catch (Exception $e1){
-//            return $this->render('clients', ['messages' => ['User no exist!']]);
-//        }
-//
-//        return $this->render('clients', ["messages" => $this->messages, "client" =>$client]);
-//    }
+
 
     public function search()
     {

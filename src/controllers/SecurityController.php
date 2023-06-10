@@ -1,5 +1,6 @@
 <?php
 
+
 require_once 'AppController.php';
 require_once __DIR__.'/../models/User.php';
 require_once __DIR__.'/../repository/UserRepository.php';
@@ -9,7 +10,7 @@ class SecurityController extends AppController{
     public function __construct()
     {
         parent::__construct();
-        $this-> userRepository = UserRepository::getInstance();
+        $this-> userRepository = new UserRepository();
     }
 
     public function login(){
@@ -104,7 +105,6 @@ class SecurityController extends AppController{
 
         $email = $_POST['email'];
 
-        // Wywołaj funkcję usuwającą użytkownika z repozytorium
         try {
             $this->userRepository->deleteUserByEmail($email);
         } catch (Exception $e) {

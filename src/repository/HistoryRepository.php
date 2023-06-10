@@ -1,6 +1,6 @@
 <?php
 require_once "Repository.php";
-require_once __DIR__.'/../models/History.php';
+require_once __DIR__ . '/../models/History.php';
 require_once __DIR__.'/../models/Client.php';
 
 class HistoryRepository extends Repository

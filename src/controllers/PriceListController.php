@@ -10,7 +10,7 @@ class PriceListController extends AppController
     public function __construct()
     {
         parent::__construct();
-        $this->priceListRepository = PriceListRepository::getInstance();
+        $this->priceListRepository = new PriceListRepository();
     }
 
 

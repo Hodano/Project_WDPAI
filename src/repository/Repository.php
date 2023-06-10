@@ -4,22 +4,13 @@ require_once __DIR__.'/../../Database.php';
 class Repository
 {
     protected $database;
-    private static $instance;
 
-    protected function __construct()             //zrobiłem singletona
+
+    public function __construct()             //zrobiłem singletona
     {
-        $this->database = new Database();
+        $this->database = Database::getInstance();
     }
 
-
-    public static function getInstance(): self
-    {
-//        if (!self::$instance) {
-            self::$instance = new static();
-//        }
-
-        return self::$instance;
-    }
 
 
 

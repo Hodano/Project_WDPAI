@@ -11,7 +11,7 @@ class CarRepository extends Repository
         $stmt->execute();
         $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $historyRepository = HistoryRepository::getInstance();
+        $historyRepository = new HistoryRepository();
 
         foreach ($cars as $car) {
             $name = $historyRepository->getClientByCarId($car['id']);
